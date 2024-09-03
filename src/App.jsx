@@ -1,31 +1,48 @@
-import { useState } from 'react'
-import './App.css'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Button, ConfigProvider, Select, Space, Switch } from 'antd'
+import { useTheme } from './hooks/useTheme'
+import { darkTheme, lightTheme } from './theme'
 
-function App() {
-    const [count, setCount] = useState(0)
+const { Option } = Select
 
-    return (
-        <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-        </>
-    )
+const App = () => {
+  const [darkMode, toggleTheme] = useTheme()
+
+  return (
+    <ConfigProvider theme={darkMode ? darkTheme : lightTheme}>
+      <div style={{ backgroundColor: darkMode ? 'black' : 'white', minHeight: '100vh', padding: '20px' }}>
+        <Space direction='vertical'>
+          <Switch
+            checked={darkMode}
+            onChange={toggleTheme}
+            checkedChildren='Dark Mode'
+            unCheckedChildren='Light Mode'
+          />
+          <Space>
+            <Button type='primary'>Primary Button</Button>
+            <Button>Default Button</Button>
+            <Button type='dashed'>Dashed Button</Button>
+            <Button type='text'>Text Button</Button>
+            <Button type='link'>Link Button</Button>
+          </Space>
+          <Space>
+            <Select defaultValue='Option1' style={{ width: 120 }}>
+              <Option value='Option1'>Option1</Option>
+              <Option value='Option2'>Option2</Option>
+            </Select>
+            <Select defaultValue='Disabled' style={{ width: 120 }} disabled>
+              <Option value='Disabled'>Disabled</Option>
+            </Select>
+            <Select defaultValue='Loading' style={{ width: 120 }} loading>
+              <Option value='Loading'>Loading</Option>
+            </Select>
+            <Select defaultValue='Clear' style={{ width: 120 }} allowClear>
+              <Option value='Clear'>Clear</Option>
+            </Select>
+          </Space>
+        </Space>
+      </div>
+    </ConfigProvider>
+  )
 }
 
 export default App
