@@ -1,4 +1,8 @@
 import { Button, ConfigProvider, Select, Space, Switch } from 'antd'
+import { getIdToken, signInWithPopup } from 'firebase/auth'
+import authApi from './apis/auth.api'
+import { auth, provider } from './config/firebase.config'
+import { useAuth } from './hooks/useAuth'
 import { useTheme } from './hooks/useTheme'
 import { darkTheme, lightTheme } from './theme'
 
@@ -6,6 +10,24 @@ const { Option } = Select
 
 const App = () => {
   const [darkMode, toggleTheme] = useTheme()
+  const { user } = useAuth()
+
+  const loginWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider)
+      const idToken = await getIdToken(result.user)
+      localStorage.setItem('token', idToken)
+      const res = await authApi.loginWithGoogle(idToken)
+      console.log('🚀 ~ loginWithGoogle ~ res:', res)
+    } catch (error) {
+      console.log('🚀 ~ loginWithGoogle ~ error:', error)
+    }
+  }
+
+  const logout = async () => {
+    await auth.signOut()
+    localStorage.removeItem('token')
+  }
 
   return (
     <ConfigProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -40,6 +62,16 @@ const App = () => {
             </Select>
           </Space>
         </Space>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          {user ? (
+            <div>
+              <p>Xin chào: {user.email}</p>
+              <button onClick={logout}>Logout</button>
+            </div>
+          ) : (
+            <button onClick={loginWithGoogle}>Login with google</button>
+          )}
+        </div>
       </div>
     </ConfigProvider>
   )
