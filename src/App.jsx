@@ -1,7 +1,9 @@
 import { Suspense } from 'react'
+import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import appRoute from '@configs/routes/appRoute'
+import { store } from '@features/store'
 import './App.css'
 
 const router = createBrowserRouter(appRoute)
@@ -9,7 +11,9 @@ const router = createBrowserRouter(appRoute)
 function App() {
   return (
     <Suspense>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </Suspense>
   )
 }
