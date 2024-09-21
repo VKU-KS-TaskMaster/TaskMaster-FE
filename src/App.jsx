@@ -7,11 +7,11 @@ import './App.css'
 const router = createBrowserRouter(appRoute)
 
 function App() {
-    return (
-        <Suspense>
-            <RouterProvider router={router} />
-        </Suspense>
-    )
+  return (
+    <Suspense>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
 }
 
 export default App

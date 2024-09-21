@@ -6,62 +6,62 @@ import Login from '@pages/Auth/Login'
 // import ProtectedRoute from './ProtectedRoute'
 
 const appRoute = [
-    {
-        path: '',
-        // element: <ProtectedRoute />,
+  {
+    path: '',
+    // element: <ProtectedRoute />,
+    children: [
+      {
+        element: <MainLayout />
+        // loader: rootLoader,
+        // children: [
+        //     {
+        //         path: '/',
+        //         element: <Dashboard />
+        //         // loader: rootLoader,
+        //         // children: [],
+        //     },
+        //     {
+        //         path: 'kanban',
+        //         element: <KanbanBoard />
+        //         // loader: teamLoader,
+        //         // children: [],
+        //     },
+        //     {
+        //         path: 'project',
+        //         children: [
+        //             {
+        //                 path: '',
+        //                 element: <ProjectList />
+        //                 // loader: teamLoader,
+        //                 // children: [],
+        //             },
+        //             {
+        //                 path: 'create',
+        //                 element: <ProjectCreate />
+        //                 // loader: teamLoader,
+        //                 // children: [],
+        //             }
+        //         ]
+        //     }
+        // ]
+      }
+    ]
+  },
+  {
+    path: '',
+    // element: <RejectedRoute />,
+    children: [
+      {
+        element: <AuthLayout />,
         children: [
-            {
-                element: <MainLayout />
-                // loader: rootLoader,
-                // children: [
-                //     {
-                //         path: '/',
-                //         element: <Dashboard />
-                //         // loader: rootLoader,
-                //         // children: [],
-                //     },
-                //     {
-                //         path: 'kanban',
-                //         element: <KanbanBoard />
-                //         // loader: teamLoader,
-                //         // children: [],
-                //     },
-                //     {
-                //         path: 'project',
-                //         children: [
-                //             {
-                //                 path: '',
-                //                 element: <ProjectList />
-                //                 // loader: teamLoader,
-                //                 // children: [],
-                //             },
-                //             {
-                //                 path: 'create',
-                //                 element: <ProjectCreate />
-                //                 // loader: teamLoader,
-                //                 // children: [],
-                //             }
-                //         ]
-                //     }
-                // ]
-            }
+          {
+            path: paths.LOGIN,
+            element: <Login />
+          }
         ]
-    },
-    {
-        path: '',
-        // element: <RejectedRoute />,
-        children: [
-            {
-                element: <AuthLayout />,
-                children: [
-                    {
-                        path: paths.LOGIN,
-                        element: <Login />
-                    }
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  }
 ]
 
 export default appRoute

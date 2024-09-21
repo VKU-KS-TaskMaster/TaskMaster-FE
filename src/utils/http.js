@@ -1,20 +1,21 @@
 import axios from 'axios'
-import config from '../constants/config'
+
+import httpConfig from '@constants/httpConfig'
 
 class Http {
   instance
   constructor() {
     this.instance = axios.create({
-      baseURL: config.baseUrl
+      baseURL: httpConfig.baseUrl
     })
 
     this.instance.interceptors.request.use(
-      (config) => {
+      (httpConfig) => {
         const token = localStorage.getItem('token')
         if (token) {
-          config.headers.Authorization = `Bearer ${token}`
+          httpConfig.headers.Authorization = `Bearer ${token}`
         }
-        return config
+        return httpConfig
       },
       (error) => {
         return Promise.reject(error)

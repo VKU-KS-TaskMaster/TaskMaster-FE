@@ -2,12 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   user: {
-    avatar: "/images/logo.png", 
-    name: "Phan Xuân Sỹ", 
-    authority: [
-      "admin", "user"
-    ], 
-    email: "sypx.21it@vku.udn.vn"
+    avatar: '/images/logo.png',
+    name: 'Phan Xuân Sỹ',
+    authority: ['admin', 'user'],
+    email: 'sypx.21it@vku.udn.vn'
   }
 }
 

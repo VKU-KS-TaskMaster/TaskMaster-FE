@@ -1,15 +1,15 @@
 const paths = {
-    HOME: '/',
+  HOME: '/',
 
-    //AUTH
-    LOGIN: '/login',
-    REGISTER: '/register',
-    LOGOUT: '/logout',
+  //AUTH
+  LOGIN: '/login',
+  REGISTER: '/register',
+  LOGOUT: '/logout',
 
-    //APPS
-    PROJECT_LIST: '/project',
+  //APPS
+  PROJECT_LIST: '/project',
 
-    KANBAN: '/kanban'
+  KANBAN: '/kanban'
 }
 
 export default paths
