@@ -4,21 +4,24 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    css: {
-        devSourcemap: true
-    },
-    resolve: {
-        alias: {
-            '@components': path.resolve(__dirname, './src/components'),
-            '@utils': path.resolve(__dirname, './src/utils'),
-            '@assets': path.resolve(__dirname, './src/assets'),
-            '@layouts': path.resolve(__dirname, './src/layouts'),
-            '@pages': path.resolve(__dirname, './src/pages'),
-            '@hooks': path.resolve(__dirname, './src/hooks'),
-            '@features': path.resolve(__dirname, './src/features'),
-            '@configs': path.resolve(__dirname, './src/configs'),
-            '@constants': path.resolve(__dirname, './src/constants')
-        }
+  plugins: [react()],
+  css: {
+    devSourcemap: true
+  },
+  resolve: {
+    alias: {
+      '@apis': path.resolve(__dirname, './src/apis'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@configs': path.resolve(__dirname, './src/configs'),
+      '@constants': path.resolve(__dirname, './src/constants'),
+      '@features': path.resolve(__dirname, './src/features'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@layouts': path.resolve(__dirname, './src/layouts'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@theme': path.resolve(__dirname, './src/theme'),
+      '@models': path.resolve(__dirname, './src/models'),
+      '@utils': path.resolve(__dirname, './src/utils')
     }
+  }
 })
