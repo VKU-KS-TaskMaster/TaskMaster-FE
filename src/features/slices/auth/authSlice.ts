@@ -7,6 +7,7 @@ interface AuthState {
 
 const initialState: AuthState = {
   user: {
+    code: '',
     avatar: '/images/logo.png',
     name: 'Phan Xuân Sỹ',
     authority: ['admin', 'user'],
