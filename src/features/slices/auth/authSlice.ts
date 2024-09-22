@@ -1,4 +1,4 @@
-import { User } from '@/models/user.type'
+import { User } from '@models/user.type'
 import { createSlice } from '@reduxjs/toolkit'
 
 interface AuthState {
@@ -11,8 +11,7 @@ const initialState: AuthState = {
     avatar: '/images/logo.png',
     name: 'Phan Xuân Sỹ',
     authority: ['admin', 'user'],
-    email: 'sypx.21it@vku.udn.vn',
-    code: ''
+    email: 'sypx.21it@vku.udn.vn'
   }
 }
 
