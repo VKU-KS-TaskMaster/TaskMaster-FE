@@ -1,9 +1,9 @@
 import http from '@utils/http'
 
-const authApi = {
-  loginWithGoogle: async (token) => {
+const AuthAPI = {
+  loginWithGoogle: async (token: string) => {
     return http.post('/auth/sign_in_google', { token })
   }
 }
 
-export default authApi
+export default AuthAPI

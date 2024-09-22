@@ -1,6 +1,6 @@
 import { theme } from 'antd'
 import { aliasToken } from './aliasToken'
-import { componentToken } from './componentToken'
+import { componentToken } from './componentToken.ts'
 import { mapToken } from './mapToken'
 import { seedToken } from './seedToken'
 

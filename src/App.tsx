@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import appRoute from '@configs/routes/appRoute'
 import { store } from '@features/store'
-import './App.css'
+import './index.css'
 
 const router = createBrowserRouter(appRoute)
 

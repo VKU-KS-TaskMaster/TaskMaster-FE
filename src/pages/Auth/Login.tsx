@@ -1,9 +1,10 @@
 import { Button, ConfigProvider, Select, Space, Switch } from 'antd'
 import { getIdToken, signInWithPopup } from 'firebase/auth'
-import authApi from '@apis/auth.api'
-import { auth, provider } from '@configs/firebase.config'
+
+import AuthAPI from '@apis/auth.api'
 import { useAuth } from '@hooks/useAuth'
 import { useTheme } from '@hooks/useTheme'
+import { auth, provider } from '@configs/firebase.config'
 import { darkTheme, lightTheme } from '@theme'
 
 const { Option } = Select
@@ -17,7 +18,7 @@ function Login() {
       const result = await signInWithPopup(auth, provider)
       const idToken = await getIdToken(result.user)
       localStorage.setItem('token', idToken)
-      const res = await authApi.loginWithGoogle(idToken)
+      const res = await AuthAPI.loginWithGoogle(idToken)
       console.log('🚀 ~ loginWithGoogle ~ res:', res)
     } catch (error) {
       console.log('🚀 ~ loginWithGoogle ~ error:', error)

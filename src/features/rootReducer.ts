@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
+
+// import RtkQueryService from '@/services/RtkQueryService'
 // import auth from './slices/auth'
 // import base from './slices/base'
 // import locale from './slices/locale/localeSlice'
 import themeReducer from './slices/theme'
-// import RtkQueryService from '@/services/RtkQueryService'
 
 const staticReducers = {
   // auth,
@@ -13,7 +14,7 @@ const staticReducers = {
   // [RtkQueryService.reducerPath]: RtkQueryService.reducer,
 }
 
-const rootReducer = (asyncReducers) => (state, action) => {
+const rootReducer = (asyncReducers: any) => (state: any, action: any) => {
   const combinedReducer = combineReducers({
     ...staticReducers,
     ...asyncReducers

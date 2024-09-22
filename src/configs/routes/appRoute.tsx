@@ -1,7 +1,7 @@
 import paths from '@constants/paths'
 import AuthLayout from '@layouts/AuthLayout'
 import MainLayout from '@layouts/MainLayout'
-import Login from '@pages/Auth/Login'
+import { Login, Register } from '@pages/Auth'
 // import RejectedRoute from './RejectedRoute'
 // import ProtectedRoute from './ProtectedRoute'
 
@@ -57,6 +57,10 @@ const appRoute = [
           {
             path: paths.LOGIN,
             element: <Login />
+          },
+          {
+            path: paths.REGISTER,
+            element: <Register />
           }
         ]
       }
