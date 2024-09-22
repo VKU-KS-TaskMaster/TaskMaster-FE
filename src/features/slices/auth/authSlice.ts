@@ -1,6 +1,11 @@
+import { User } from '@models/user.type'
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+interface AuthState {
+  user: User | null
+}
+
+const initialState: AuthState = {
   user: {
     avatar: '/images/logo.png',
     name: 'Phan Xuân Sỹ',
