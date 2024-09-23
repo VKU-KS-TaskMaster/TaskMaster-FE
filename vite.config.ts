@@ -15,14 +15,15 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@configs': path.resolve(__dirname, './src/configs'),
       '@constants': path.resolve(__dirname, './src/constants'),
+      '@containers': path.resolve(__dirname, './src/containers'),
+      '@core': path.resolve(__dirname, './src/core'),
       '@features': path.resolve(__dirname, './src/features'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@theme': path.resolve(__dirname, './src/theme'),
       '@models': path.resolve(__dirname, './src/models'),
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@core': path.resolve(__dirname, './src/core'),
+      '@utils': path.resolve(__dirname, './src/utils')
     }
   }
 })

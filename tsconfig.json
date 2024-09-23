@@ -18,14 +18,15 @@
       "@components/*": ["src/components/*"],
       "@configs/*": ["src/configs/*"],
       "@constants/*": ["src/constants/*"],
+      "@containers/*": ["src/containers/*"],
+      "@core/*": ["src/core/*"],
       "@features/*": ["src/features/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@theme/*": ["src/theme/*"],
       "@models/*": ["src/models/*"],
-      "@utils/*": ["src/utils/*"],
-      "@core/*": ["src/core/*"]
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": ["src"],
