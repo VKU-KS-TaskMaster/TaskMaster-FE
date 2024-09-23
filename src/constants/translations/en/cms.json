@@ -1,0 +1,171 @@
+{
+  "layout": {
+    "header": {
+      "createBtn": "Create",
+      "createAction": {
+        "spaceBtn": "Space",
+        "projectBtn": "Project",
+        "taskBtn": "Task",
+        "teamBtn": "Team",
+
+        "inviteBtn": "Invite"
+      },
+
+      "searchBtn": "Search..",
+      "upgradeBtn": "Upgrade",
+
+      "taskBtnTooltip": "Open my Tasks",
+      "notepadBtnTooltip": "Open Notepad",
+      "reminderBtnTooltip": "Create a reminder",
+      "appActionBtnTooltip": "Quick Action Menu",
+
+      "userAction": {
+        "muteNotiBtn": "Mute notifications",
+        "muteNotiLv1": "For 30 minutes",
+        "muteNotiLv2": "For 1 hour",
+        "muteNotiLv3": "For 4 hours",
+        "muteNotiLv4": "Until tomorrow",
+        "muteNotiLv5": "Until I turn it back on",
+        "inviteBtn": "Invite teammates",
+
+        "profileBtn": "Profile",
+        "settingBtn": "Settings",
+
+        "signOutBtn": "Sign out"
+      }
+    },
+
+    "sidebar": {
+      "freeAccount": "Free",
+      "businessAccount": "Business",
+
+      "collapeBtn": "Collapse Sidebar",
+      "homeBtn": "Home",
+      "inboxBtn": "Inbox",
+      "dashboardBtn": "Dashboard",
+      "moreBtn": "Show more",
+
+      "projectListTitle": "Projects",
+      "projectSearchTooltip": "Search",
+      "projectListBtn": "Browse projects",
+      "projectCreateBtn": "Create a project",
+
+      "teamListTilte": "Teams",
+      "teamListViewBtn": "Browse teams",
+
+      "inviteBtn": "Invite",
+      "helpBtn": "Help"
+    }
+  },
+
+  "modal": {
+    "create": {
+      "descriptionTitle": "Desctiption",
+      "statusTitle": "Status",
+      "beginDateTitle": "Begin date",
+      "dueDateTitle": "Due date",
+      "memberTitle": "Members",
+      "teamTitle": "Teams",
+      "attachmentTitle": "Attachments",
+      "attachmentText": "Drag and drop files to attach or",
+      "currencyTitle": "Tiền tệ",
+
+      "projectTaskTab": {
+        "title": "Project/Task",
+        "projectOption": "Project",
+        "taskOption": "Task",
+        "projectNameTitle": "Project name",
+        "taskNameTitle": "Task name",
+        "projectTitle": "Project"
+      },
+      "milestoneTab": {
+        "title": "Milestone",
+        "nameTitle": "Milestone name",
+        "projectTitle": "Project"
+      },
+      "teamTab": {
+        "title": "Team",
+        "nameTitle": "Team name"
+      }
+    },
+
+    "comment": {
+      "title": "Comments",
+      "exitBtnTooltip": "Close",
+
+      "detail": {
+        "replyBtn": "Reply",
+        "replyCount": "replies",
+        "collapseBtn": "Collapse",
+        "closeBtn": "Close"
+      }
+    },
+
+    "milestoneDetail": {
+      "dueDateTitle": "Due date",
+      "dueDateBtnTooltip": "Add due date",
+      "descriptionTitle": "Description",
+      "descriptionPlaceholder": "What's this milestone about?",
+
+      "taskTitle": "Tasks",
+      "assignMemberBtnTooltip": "Assign this milestone",
+      "addTaskBtn": "Add task",
+
+      "keyResourceTitle": "Key resources",
+      "keyResourceCreateBtn": "Attach more",
+
+      "markCompleteBtnTooltip": "Make complete"
+    }
+  },
+
+  "constant": {
+    "currency": {
+      "vi": "VND (₫)",
+      "en": "USD ($)",
+      "kr": "KRW (₩)"
+    },
+
+    "status": {
+      "pending": "Pending",
+      "inProgress": "Inprogress",
+      "review": "Review",
+      "completed": "Completed",
+      "onLeave": "Onleave",
+      "cancelled": "Cancelled",
+      "deleted": "Deleted",
+
+      "actived": "Actived",
+      "inActived": "Inactived"
+    }
+  },
+
+  "button": {
+    "create": "Create",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "completed": "Completed",
+    "browse": "Browse",
+    "share": "Share",
+    "close": "Close",
+    "send": "Send",
+
+    "favoriteTooltip": "Add to favorite",
+    "editTooltip": "Edit",
+    "deleteTooltip": "Delete",
+    "recordTooltip": "Record",
+    "fileTooltip": "Attachment"
+  },
+
+  "date": {
+    "am": "am",
+    "pm": "pm",
+
+    "secondAgo": "seconds ago",
+    "minuteAgo": "minutes ago",
+    "hourAgo": "hours ago",
+    "dayAgo": "days ago",
+    "monthAgo": "months ago",
+    "yearAgo": "years ago"
+  }
+}

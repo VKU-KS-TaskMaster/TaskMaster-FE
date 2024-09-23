@@ -1,0 +1,171 @@
+{
+  "layout": {
+    "header": {
+      "createBtn": "Tạo mới",
+      "createAction": {
+        "spaceBtn": "Không gian làm việc",
+        "projectBtn": "Dự án",
+        "taskBtn": "Công việc",
+        "teamBtn": "Đội ngũ",
+
+        "inviteBtn": "Mời đồng đội"
+      },
+
+      "searchBtn": "Tìm kiếm..",
+      "upgradeBtn": "Nâng cấp",
+
+      "taskBtnTooltip": "Danh sách công việc",
+      "notepadBtnTooltip": "Xem ghi chú",
+      "reminderBtnTooltip": "Tạo lời nhắc",
+      "appActionBtnTooltip": "Danh sách chức năng",
+
+      "userAction": {
+        "muteNotiBtn": "Tắt thông báo",
+        "muteNotiLv1": "Trong 30 phút",
+        "muteNotiLv2": "Trong 1 giờ",
+        "muteNotiLv3": "Trong 4 giờ",
+        "muteNotiLv4": "Đến ngày mai",
+        "muteNotiLv5": "Đến khi bật lại",
+        "inviteBtn": "Mời đồng đội",
+
+        "profileBtn": "Thông tin cá nhân",
+        "settingBtn": "Cài đặt",
+
+        "signOutBtn": "Thoát tài khoản"
+      }
+    },
+
+    "sidebar": {
+      "freeAccount": "Miễn phí",
+      "businessAccount": "Doanh nghiệp",
+
+      "collapeBtn": "Mở rộng",
+      "homeBtn": "Trang chủ",
+      "inboxBtn": "Nhắn tin",
+      "dashboardBtn": "",
+      "moreBtn": "Xem thêm",
+
+      "projectListTitle": "Danh sách dự án",
+      "projectSearchTooltip": "Tìm kiếm",
+      "projectListBtn": "Xem danh sách dự án",
+      "projectCreateBtn": "Tạo dự án mới",
+
+      "teamListTilte": "Danh sách đội ngũ",
+      "teamListViewBtn": "Xem danh sách đội ngũ",
+
+      "inviteBtn": "Mời đồng đội",
+      "helpBtn": "Trợ giúp"
+    }
+  },
+
+  "modal": {
+    "create": {
+      "descriptionTitle": "Mô tả",
+      "statusTitle": "Trạng thái",
+      "beginDateTitle": "Ngày bắt đầu",
+      "dueDateTitle": "Ngày kết thúc",
+      "memberTitle": "Thành viên",
+      "teamTitle": "Nhóm",
+      "attachmentTitle": "Đính kèm",
+      "attachmentText": "Kéo và thả tài liệu hoặc",
+      "currencyTitle": "Tiền tệ",
+
+      "projectTaskTab": {
+        "title": "Dự án/Công việc",
+        "projectOption": "Dự án",
+        "taskOption": "Công việc",
+        "projectNameTitle": "Tên dự án",
+        "taskNameTitle": "Tên công việc",
+        "projectTitle": "Dự án"
+      },
+      "milestoneTab": {
+        "title": "Milestone",
+        "nameTitle": "Milestone name",
+        "projectTitle": "Dự án"
+      },
+      "teamTab": {
+        "title": "Đội ngũ",
+        "nameTitle": "Tên nhóm"
+      }
+    },
+
+    "comment": {
+      "title": "Bình luận",
+      "exitBtnTooltip": "Tắt bình luận",
+
+      "detail": {
+        "replyBtn": "Phản hồi",
+        "replyCount": "phản hồi",
+        "collapseBtn": "Mở rộng",
+        "closeBtn": "Đóng"
+      }
+    },
+
+    "milestoneDetail": {
+      "dueDateTitle": "Ngày hết hạn",
+      "dueDateBtnTooltip": "Thêm hạn",
+      "descriptionTitle": "Mô tả",
+      "descriptionPlaceholder": "Nội dung, lí do, mục tiêu,..",
+
+      "taskTitle": "Danh sách công việc",
+      "assignMemberBtnTooltip": "Thêm thành viên",
+      "addTaskBtn": "Thêm công việc",
+
+      "keyResourceTitle": "Tài liệu",
+      "keyResourceCreateBtn": "Đính kèm thêm",
+
+      "markCompleteBtnTooltip": "Hoàn thành"
+    }
+  },
+
+  "constant": {
+    "currency": {
+      "vi": "VND (₫)",
+      "en": "USD ($)",
+      "kr": "KRW (₩)"
+    },
+
+    "status": {
+      "pending": "Mới tạo",
+      "inProgress": "Đang thực hiện",
+      "review": "Cần kiểm tra",
+      "completed": "Hoàn thành",
+      "onLeave": "Tạm hoãn",
+      "cancelled": "Hủy",
+      "deleted": "Xóa",
+
+      "actived": "Đã duyệt",
+      "inActived": "Không được duyệt"
+    }
+  },
+
+  "button": {
+    "create": "Tạo mới",
+    "submit": "Xác nhận",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "completed": "Hoàn thành",
+    "browse": "Chọn",
+    "share": "Chia sẻ",
+    "close": "Đóng",
+    "send": "Gửi",
+
+    "favoriteTooltip": "Yêu thích",
+    "editTooltip": "Sửa",
+    "deleteTooltip": "Xóa",
+    "recordTooltip": "Ghi âm",
+    "fileTooltip": "Đính kèm"
+  },
+
+  "date": {
+    "am": "am",
+    "pm": "pm",
+
+    "secondAgo": "giây trước",
+    "minuteAgo": "phút trước",
+    "hourAgo": "giờ trước",
+    "dayAgo": "ngày trước",
+    "monthAgo": "tháng trước",
+    "yearAgo": "năm trước"
+  }
+}
