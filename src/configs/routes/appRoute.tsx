@@ -2,13 +2,13 @@ import paths from '@constants/paths'
 import AuthLayout from '@layouts/AuthLayout'
 import MainLayout from '@layouts/MainLayout'
 import { Login, Register } from '@pages/Auth'
-// import RejectedRoute from './RejectedRoute'
-// import ProtectedRoute from './ProtectedRoute'
+import RejectedRoute from './RejectedRoute'
+import ProtectedRoute from './ProtectedRoute'
 
 const appRoute = [
   {
     path: '',
-    // element: <ProtectedRoute />,
+    element: <ProtectedRoute />,
     children: [
       {
         element: <MainLayout />
@@ -49,7 +49,7 @@ const appRoute = [
   },
   {
     path: '',
-    // element: <RejectedRoute />,
+    element: <RejectedRoute />,
     children: [
       {
         element: <AuthLayout />,

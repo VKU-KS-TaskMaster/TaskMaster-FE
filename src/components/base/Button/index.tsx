@@ -1,4 +1,4 @@
-import { cn } from '@/utils/base'
+import { cn } from '@utils/base'
 
 export enum ButtonType {
   PRIMARY = 'primary',
