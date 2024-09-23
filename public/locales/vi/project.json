@@ -1,0 +1,84 @@
+{
+  "list": {
+    "title": "Danh sách dự án",
+    "createBtn": "Tạo mới dự án",
+    "searchBtn": "Tìm kiếm..",
+
+    "filter": {
+      "owner": "Người tạo",
+      "ownerSearch": "Tìm dự án theo người tạo..",
+      "member": "Thành viên",
+      "memberSearch": "Tìm dự án theo thành viên..",
+      "team": "Đội ngũ",
+      "teamSearch": "Tìm dự án theo đội ngũ..",
+      "status": "Trạng thái"
+    },
+
+    "table": {
+      "nameCol": "Tên dự án",
+      "statusCol": "Trạng thái",
+      "memberCol": "Thành viên",
+      "beginDateCol": "Ngày bắt đầu",
+      "dueDateCol": "Ngày kết thúc",
+      "actionCol": "Chức năng",
+      "inviteAction": "Mời"
+    }
+  },
+
+  "detail": {
+    "actionBtn": {
+      "title": "Chức năng",
+      "edit": "Sửa chi tiết dự án",
+      "managePermissions": "Quản lý quyền truy cập",
+
+      "copyLink": "Sao chép liên kết",
+      "duplicate": "Tạo dự án với cùng thông tin",
+
+      "import": "Nhập từ CSV",
+      "export": "Xuất ra CSV"
+    },
+    "statusBtn": "Chọn trạng thái",
+    "memberBtnTooltip": "Thành viên",
+    "shareBtn": "Chia sẻ",
+    "commentBtnTooltip": "Bình luận",
+
+    "tabs": {
+      "overview": {
+        "title": "Tổng quan",
+        "descriptionTitle": "Mô tả dự án",
+        "descriptionPlaceholder": "Nội dung, lí do, mục tiêu,..",
+        "managerTitle": "Người quản lý",
+
+        "keyResourceTitle": "Tài liệu",
+        "keyResourceCreateBtn": "Đính kèm thêm",
+
+        "milestoneTitle": "Milestones",
+        "markCompleteCreateBtn": "Thêm mới",
+        "markCompleteBtnTooltip": "Hoàn thành",
+        "assignMemberBtnTooltip": "Thêm thành viên",
+        "addDueDateBtnTooltip": "Thêm hạn"
+      },
+
+      "board": {
+        "title": "Bảng công việc",
+        "addTaskBtn": "Tạo công việc",
+        "addMilestoneBtn": "Tạo milestone",
+        "filterBtn": "Bộ lọc",
+        "sortBtn": "Sắp xếp",
+
+        "groupBtn": "Nhóm",
+        "groupBySection": "",
+        "groupByPrioity": "Độ ưu tiên",
+
+        "optionBtn": "",
+        "saveViewBtn": "Lưu cài đặt trang",
+
+        "moreBtnTooltip": "Chức năng khác",
+
+        "markCompleteBtnTooltip": "Hoàn thành",
+        "assignMemberBtnTooltip": "Thêm thành viên",
+        "addDueDateBtnTooltip": "Thêm hạn"
+      }
+    }
+  }
+}

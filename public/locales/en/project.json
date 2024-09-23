@@ -1,0 +1,84 @@
+{
+  "list": {
+    "title": "Projects",
+    "createBtn": "Create project",
+    "searchBtn": "Search..",
+
+    "filter": {
+      "owner": "Owner",
+      "ownerSearch": "Filter projects by owner..",
+      "member": "Members",
+      "memberSearch": "Filter projects by members..",
+      "team": "Teams",
+      "teamSearch": "Filter projects by teams..",
+      "status": "Status"
+    },
+
+    "table": {
+      "nameCol": "Name",
+      "statusCol": "Status",
+      "memberCol": "Members",
+      "beginDateCol": "Begin date",
+      "dueDateCol": "Due date",
+      "actionCol": "Actions",
+      "inviteAction": "Invite"
+    }
+  },
+
+  "detail": {
+    "actionBtn": {
+      "title": "Actions",
+      "edit": "Edit project details",
+      "managePermissions": "Manage permissions",
+
+      "copyLink": "Copy project link",
+      "duplicate": "Duplicate",
+
+      "import": "Import from CSV",
+      "export": "Export to CSV"
+    },
+    "statusBtn": "Set status",
+    "memberBtnTooltip": "Members",
+    "shareBtn": "Share",
+    "commentBtnTooltip": "Open Comments",
+
+    "tabs": {
+      "overview": {
+        "title": "Overview",
+        "descriptionTitle": "Project description",
+        "descriptionPlaceholder": "What's this project about?",
+        "managerTitle": "Manager",
+
+        "keyResourceTitle": "Key resources",
+        "keyResourceCreateBtn": "Attach more",
+
+        "milestoneTitle": "Milestones",
+        "markCompleteCreateBtn": "Create",
+        "markCompleteBtnTooltip": "Mark milestone complete",
+        "assignMemberBtnTooltip": "Assign this milestone",
+        "addDueDateBtnTooltip": "Add due date"
+      },
+
+      "board": {
+        "title": "Board",
+        "addTaskBtn": "Add task",
+        "addMilestoneBtn": "Add milestone",
+        "filterBtn": "Filter",
+        "sortBtn": "Sort",
+
+        "groupBtn": "Group",
+        "groupBySection": "Sections",
+        "groupByPrioity": "Priority",
+
+        "optionBtn": "Options",
+        "saveViewBtn": "Save view",
+
+        "moreBtnTooltip": "More actions",
+
+        "markCompleteBtnTooltip": "Mark complete",
+        "assignMemberBtnTooltip": "Assign this",
+        "addDueDateBtnTooltip": "Add due date"
+      }
+    }
+  }
+}
