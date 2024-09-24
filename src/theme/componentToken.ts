@@ -1,10 +1,10 @@
+import colors from '@constants/colors'
+
 export const componentToken = {
   Button: {
-    controlHeight: 40,
-    fontSize: 16
+    borderRadius: '6px',
+
+    textTextColor: colors.TEXT
   },
-  Select: {
-    controlHeight: 40
-  }
-  // Thêm các component token khác ở đây
+  Select: {}
 }

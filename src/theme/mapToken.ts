@@ -2,5 +2,7 @@
 export const mapToken = {
   fontSize: 14,
   sizeStep: 4,
-  controlHeight: 32
+  controlHeight: 32,
+  fontFamily: 'Roboto, sans-serif',
+  fontWeigth: 400
 }
