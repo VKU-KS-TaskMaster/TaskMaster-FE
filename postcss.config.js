@@ -1,17 +1,6 @@
-export const plugins = [
-  'postcss-flexbugs-fixes',
-  [
-    'postcss-preset-env',
-    {
-      autoprefixer: {
-        flexbox: 'no-2009'
-      },
-      stage: 2,
-      features: {
-        'custom-properties': true,
-        'nesting-rules': true // Enable nesting
-      }
-    }
-  ],
-  'tailwindcss'
-]
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {}
+  }
+}
