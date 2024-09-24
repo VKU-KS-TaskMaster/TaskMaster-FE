@@ -44,7 +44,7 @@ i18n
       escapeValue: false
     },
     backend: {
-      backends: [HttpBackend, resourcesToBackend((lng: string, ns: string) => import(`./locales/${lng}/${ns}.json`))],
+      backends: [HttpBackend, resourcesToBackend((lng: string, ns: string) => import(`/locales/${lng}/${ns}.json`))],
       backendOptions: [
         {
           loadPath: '/locales/{{lng}}/{{ns}}.json'
