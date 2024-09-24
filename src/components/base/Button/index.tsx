@@ -56,9 +56,10 @@ const Button: React.FC<ButtonCustomProps> = ({
   const DEFAULT_CLASS_NAME = DEFINE_BUTTON_CLASS_NAME[key]
   const DEFAULT_ICON_CLASS_NAME = DEFINE_BUTTON_ICON_CLASS_NAME[key] || ''
   const COMBINED_CLASS_NAME = `${DEFAULT_CLASS_NAME} ${props.className || ''}`.trim()
-  const DEFAULT_PROPS = {
-    [variant]: true
-  }
+  const DEFAULT_PROPS: { [key: string]: boolean | string } = {}
+
+  if (variant === ButtonVarient.GHOST || variant === ButtonVarient.DANGEROUS) DEFAULT_PROPS[variant] = true
+  else DEFAULT_PROPS['shape'] = variant
 
   return (
     <BaseButton
