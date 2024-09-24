@@ -1,138 +1,73 @@
-import { cn } from '@utils/base'
+import { Button as BaseButton } from 'antd'
+import type { ButtonProps } from 'antd/lib/button'
 
 export enum ButtonType {
+  DEFAULT = 'default',
   PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary',
-  GHOST = 'ghost'
+  DASHED = 'dashed',
+  LINK = 'link',
+  TEXT = 'text'
 }
 
-export enum ButtonSize {
-  XS = 'xs',
-  MD = 'md'
+export enum ButtonVarient {
+  GHOST = 'ghost',
+  SQUARE = 'square',
+  CIRCLE = 'circle',
+  STANDARD = 'standard',
+  DANGEROUS = 'dangerous'
 }
+
+type ButtonCombination = `${ButtonType}_${ButtonVarient}`
 
 type DEFINE_BUTTON_COLOR_TYPE = {
-  [key in ButtonType]: {
-    borderColor: string
-    textColor: string
-    backgroundColor: string
-    shadowColor: string
-    grainColor?: string
-    lineColor?: string
-  }
+  [key in ButtonCombination]?: string
 }
 
-// Define button color
-export const DEFINE_BUTTON_COLOR: DEFINE_BUTTON_COLOR_TYPE = {
-  [ButtonType.PRIMARY]: {
-    borderColor: 'border-primary',
-    textColor: 'text-white',
-    backgroundColor: 'bg-primary',
-    shadowColor: 'shadow-primary',
-    grainColor: 'grain-primary',
-    lineColor: 'line-primary'
-  },
-  [ButtonType.SECONDARY]: {
-    borderColor: 'border-secondary',
-    textColor: 'text-secondary',
-    backgroundColor: 'bg-secondary',
-    shadowColor: 'shadow-secondary',
-    grainColor: 'grain-secondary',
-    lineColor: 'line-secondary'
-  },
-  [ButtonType.TERTIARY]: {
-    borderColor: 'border-tertiary',
-    textColor: 'text-tertiary',
-    backgroundColor: 'bg-tertiary',
-    shadowColor: 'shadow-tertiary',
-    grainColor: 'grain-tertiary',
-    lineColor: 'line-tertiary'
-  },
-  [ButtonType.GHOST]: {
-    borderColor: 'border-ghost',
-    textColor: 'text-ghost',
-    backgroundColor: 'bg-transparent',
-    shadowColor: 'shadow-ghost'
-  }
+export const DEFINE_BUTTON_CLASS_NAME: DEFINE_BUTTON_COLOR_TYPE = {
+  [`${ButtonType.DEFAULT}_${ButtonVarient.GHOST}`]:
+    'group text-textWeak border-btn-border hover:text-text hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+  [`${ButtonType.PRIMARY}_${ButtonVarient.GHOST}`]:
+    'text-text border-btn-border hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+  [`${ButtonType.DEFAULT}_${ButtonVarient.SQUARE}`]:
+    'group border-transparent bg-transparent hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+  [`${ButtonType.PRIMARY}_${ButtonVarient.SQUARE}`]:
+    'border-transparent bg-transparent hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive'
 }
 
-// Define button size
-export const DEFINE_BUTTON_SIZE: DEFINE_BUTTON_SIZE_TYPE = {
-  [ButtonSize.XS]: {
-    paddingY: 'py-1',
-    paddingX: 'px-2',
-    fontSize: 'text-xs',
-    rounded: 'rounded-xs',
-    shadowHeight: 'h-2'
-  },
-  [ButtonSize.MD]: {
-    paddingY: 'py-2',
-    paddingX: 'px-4',
-    fontSize: 'text-sm',
-    rounded: 'rounded-md',
-    shadowHeight: 'h-3'
-  }
+export const DEFINE_BUTTON_ICON_CLASS_NAME: DEFINE_BUTTON_COLOR_TYPE = {
+  [`${ButtonType.DEFAULT}_${ButtonVarient.GHOST}`]:
+    'text-icon transition-colors duration-200 group-hover:text-iconActive group-active:text-iconActive',
+  [`${ButtonType.PRIMARY}_${ButtonVarient.GHOST}`]: '',
+  [`${ButtonType.DEFAULT}_${ButtonVarient.SQUARE}`]:
+    'text-icon transition-colors duration-200 group-hover:text-iconActive group-active:text-iconActive',
+  [`${ButtonType.PRIMARY}_${ButtonVarient.SQUARE}`]: 'text-iconActive'
 }
 
-type DEFINE_BUTTON_SIZE_TYPE = {
-  [key in ButtonSize]: {
-    paddingY: string
-    paddingX: string
-    fontSize: string
-    rounded: string
-    shadowHeight: string
-  }
+interface ButtonCustomProps extends ButtonProps {
+  variant: ButtonVarient
 }
 
-interface ButtonProps {
-  className?: string
-  children: React.ReactNode
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-  style?: React.CSSProperties
-  disabled?: boolean
-  variant?: ButtonType
-  size: ButtonSize
-}
-
-const Button: React.FC<ButtonProps> = ({
-  className = '',
-  children,
-  onClick = () => {},
-  style = {},
-  disabled = false,
-  variant = ButtonType.PRIMARY,
-  size = ButtonSize.MD,
+const Button: React.FC<ButtonCustomProps> = ({
+  type = ButtonType.PRIMARY,
+  variant = ButtonVarient.GHOST,
   ...props
 }) => {
-  const DEFINE_TYPE = disabled ? DEFINE_BUTTON_COLOR[ButtonType.GHOST] : DEFINE_BUTTON_COLOR[variant]
-  const DEFINE_SIZE = DEFINE_BUTTON_SIZE[size]
-  const styled = {
-    '--border-color': DEFINE_TYPE?.borderColor,
-    '--background-color': DEFINE_TYPE?.backgroundColor,
-    '--shadow-color': DEFINE_TYPE?.shadowColor,
-    '--text-color': DEFINE_TYPE?.textColor,
-
-    '--padding-y': DEFINE_SIZE?.paddingY,
-    '--padding-x': DEFINE_SIZE?.paddingX,
-    '--font-size': DEFINE_SIZE?.fontSize,
-    '--rounded': DEFINE_SIZE?.rounded,
-    '--shadow-height': DEFINE_SIZE?.shadowHeight
-  } as React.CSSProperties
+  const key: `${ButtonType}_${ButtonVarient}` = `${type}_${variant}`
+  const DEFAULT_CLASS_NAME = DEFINE_BUTTON_CLASS_NAME[key]
+  const DEFAULT_ICON_CLASS_NAME = DEFINE_BUTTON_ICON_CLASS_NAME[key] || ''
+  const COMBINED_CLASS_NAME = `${DEFAULT_CLASS_NAME} ${props.className || ''}`.trim()
+  const DEFAULT_PROPS = {
+    [variant]: true
+  }
 
   return (
-    <button
-      className={cn(className)}
-      onClick={(e) => onClick(e)}
-      style={{
-        backgroundColor: DEFINE_TYPE.backgroundColor,
-        color: DEFINE_TYPE.textColor,
-        boxShadow: `0 ${DEFINE_SIZE?.shadowHeight} ${DEFINE_TYPE?.shadowColor}`,
-        ...styled,
-        ...style
-      }}
+    <BaseButton
+      type={type}
+      {...DEFAULT_PROPS}
       {...props}
-    ></button>
+      className={COMBINED_CLASS_NAME}
+      classNames={{ icon: DEFAULT_ICON_CLASS_NAME }}
+    ></BaseButton>
   )
 }
 
