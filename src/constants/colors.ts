@@ -22,6 +22,8 @@ const colors = {
     CARD: 'rgba(42, 43, 45, 1)'
   },
 
+  DIVIDER: 'rgba(0, 0, 0, 0.06)',
+  DIVIDER_BG: 'rgb(60, 65, 74, 1)',
   ICON: 'rgba(162, 160, 162, 0.85)',
   ICON_ACTIVE: 'rgba(255, 255, 255, 1)',
   BORDER_BOTTOM: 'rgba(66, 66, 68, 1)',

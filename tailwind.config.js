@@ -25,9 +25,11 @@ export default {
           mess: 'rgba(173, 104, 0, 1)',
           weak: 'rgba(30, 31, 33, 1)',
           active: 'rgba(255, 255, 255, 0.11)',
-          card: 'rgba(42, 43, 45, 1)'
+          card: 'rgba(42, 43, 45, 1)',
+          divider: 'rgb(60, 65, 74, 1)'
         },
 
+        divider: 'rgba(0, 0, 0, 0.06)',
         icon: 'rgba(162, 160, 162, 0.85)',
         iconActive: 'rgba(255, 255, 255, 1)',
         borderBottom: 'rgba(66, 66, 68, 1)',
