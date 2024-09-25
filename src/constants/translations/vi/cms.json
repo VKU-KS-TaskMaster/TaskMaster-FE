@@ -3,12 +3,12 @@
     "header": {
       "createBtn": "Tạo mới",
       "createAction": {
-        "spaceBtn": "Không gian làm việc",
-        "projectBtn": "Dự án",
-        "taskBtn": "Công việc",
-        "teamBtn": "Đội ngũ",
+        "spaceItem": "Không gian làm việc",
+        "projectItem": "Dự án",
+        "taskItem": "Công việc",
+        "teamItem": "Đội ngũ",
 
-        "inviteBtn": "Mời đồng đội"
+        "inviteItem": "Mời đồng đội"
       },
 
       "searchBtn": "Tìm kiếm..",

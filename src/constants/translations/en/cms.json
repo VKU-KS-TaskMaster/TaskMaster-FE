@@ -3,12 +3,12 @@
     "header": {
       "createBtn": "Create",
       "createAction": {
-        "spaceBtn": "Space",
-        "projectBtn": "Project",
-        "taskBtn": "Task",
-        "teamBtn": "Team",
+        "spaceItem": "Space",
+        "projectItem": "Project",
+        "taskItem": "Task",
+        "teamItem": "Team",
 
-        "inviteBtn": "Invite"
+        "inviteItem": "Invite"
       },
 
       "searchBtn": "Search..",
