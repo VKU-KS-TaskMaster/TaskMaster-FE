@@ -25,13 +25,13 @@ type DEFINE_BUTTON_COLOR_TYPE = {
 
 export const DEFINE_BUTTON_CLASS_NAME: DEFINE_BUTTON_COLOR_TYPE = {
   [`${ButtonType.DEFAULT}_${ButtonVarient.GHOST}`]:
-    'group text-textWeak border-btn-border hover:text-text hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+    'group border-btn-border text-textWeak hover:bg-btn-bgHover hover:text-text active:bg-btn-bgActive active:border-btn-borderHover',
   [`${ButtonType.PRIMARY}_${ButtonVarient.GHOST}`]:
-    'text-text border-btn-border hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+    'border-btn-border text-text hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover',
   [`${ButtonType.DEFAULT}_${ButtonVarient.SQUARE}`]:
-    'group border-transparent bg-transparent hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive',
+    'group justify-center bg-transparent border-transparent shadow-none hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover',
   [`${ButtonType.PRIMARY}_${ButtonVarient.SQUARE}`]:
-    'border-transparent bg-transparent hover:bg-btn-bgHover active:border-btn-borderHover active:bg-btn-bgActive'
+    'justify-center bg-transparent border-transparent shadow-none hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover'
 }
 
 export const DEFINE_BUTTON_ICON_CLASS_NAME: DEFINE_BUTTON_COLOR_TYPE = {
