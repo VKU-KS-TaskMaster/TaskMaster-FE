@@ -7,6 +7,7 @@ import {
   CheckOutlined,
   ClockCircleOutlined,
   CloseOutlined,
+  ClusterOutlined,
   CommentOutlined,
   DeleteOutlined,
   DownOutlined,
@@ -55,6 +56,14 @@ type Icon = {
 }
 
 //Project
+export const SpaceIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
+  return <ClusterOutlined width={width} height={height} color={color} className={className} />
+}
+
+export const TaskIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
+  return <CheckCircleOutlined width={width} height={height} color={color} className={className} />
+}
+
 export const ProjectOverviewIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
   return <ProjectOutlined width={width} height={height} color={color} className={className} />
 }
