@@ -20,18 +20,18 @@
       "appActionBtnTooltip": "Danh sách chức năng",
 
       "userAction": {
-        "muteNotiBtn": "Tắt thông báo",
+        "muteNotiItem": "Tắt thông báo",
         "muteNotiLv1": "Trong 30 phút",
         "muteNotiLv2": "Trong 1 giờ",
         "muteNotiLv3": "Trong 4 giờ",
         "muteNotiLv4": "Đến ngày mai",
         "muteNotiLv5": "Đến khi bật lại",
-        "inviteBtn": "Mời đồng đội",
+        "inviteItem": "Mời đồng đội",
 
-        "profileBtn": "Thông tin cá nhân",
-        "settingBtn": "Cài đặt",
+        "profileItem": "Thông tin cá nhân",
+        "settingItem": "Cài đặt",
 
-        "signOutBtn": "Thoát tài khoản"
+        "signOutItem": "Thoát tài khoản"
       }
     },
 

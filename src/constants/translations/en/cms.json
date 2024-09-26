@@ -20,18 +20,18 @@
       "appActionBtnTooltip": "Quick Action Menu",
 
       "userAction": {
-        "muteNotiBtn": "Mute notifications",
+        "muteNotiItem": "Mute notifications",
         "muteNotiLv1": "For 30 minutes",
         "muteNotiLv2": "For 1 hour",
         "muteNotiLv3": "For 4 hours",
         "muteNotiLv4": "Until tomorrow",
         "muteNotiLv5": "Until I turn it back on",
-        "inviteBtn": "Invite teammates",
+        "inviteItem": "Invite teammates",
 
-        "profileBtn": "Profile",
-        "settingBtn": "Settings",
+        "profileItem": "Profile",
+        "settingItem": "Settings",
 
-        "signOutBtn": "Sign out"
+        "signOutItem": "Sign out"
       }
     },
 
