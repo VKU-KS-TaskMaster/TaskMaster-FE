@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
     "target": "ESNext",
     "module": "ESNext",
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "baseUrl": ".",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "paths": {
       "@apis/*": ["src/apis/*"],
       "@assets/*": ["src/assets/*"],
@@ -27,7 +24,20 @@
       "@theme/*": ["src/theme/*"],
       "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"]
-    }
+    },
+     /* Bundler mode */
+     "moduleResolution": "bundler",
+     "allowImportingTsExtensions": true,
+     "resolveJsonModule": true,
+     "isolatedModules": true,
+     "noEmit": true,
+     "jsx": "react-jsx",
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "."
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "vite.config.ts"]
