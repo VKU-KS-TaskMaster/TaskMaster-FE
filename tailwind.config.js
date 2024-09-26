@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 export default {
   important: true,
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -41,5 +42,17 @@ export default {
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addComponents, theme }) {
+      addComponents({
+        '.container': {
+          maxWidth: theme('columns.7xl'),
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          paddingRight: theme('spacing.4'),
+          paddingLeft: theme('spacing.4')
+        }
+      })
+    })
+  ]
 }

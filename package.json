@@ -10,8 +10,7 @@
     "lint": "eslint --ext ts,tsx src/",
     "lint:fix": "eslint --fix --ext ts,tsx src/",
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
-    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
-    "prepare": "husky"
+    "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
@@ -32,31 +31,31 @@
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^5.57.1",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.13",
     "clsx": "^2.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-react": "^0.0.4",
-    "husky": "^9.1.2",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.6.0",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "stylelint": "^16.7.0",
-    "stylelint-config-recommended": "^14.0.1",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
+    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
     "vite": "^5.3.4"
   },
-  "packageManager": "pnpm@9.4.0"
+  "packageManager": "yarn@1.22.22"
 }
