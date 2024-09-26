@@ -1,10 +1,6 @@
 const paths = {
-  HOME: '/:spaceCode/',
-
-  USER: '/user',
-  TEAM: '/team',
-
-  CHAT: '/chat',
+  HOME: '/',
+  USER: '/user/:',
 
   //AUTH
   LOGIN: '/login',
@@ -13,18 +9,24 @@ const paths = {
   CONFIRM_FORGOT_PASSWORD: '/confirm_forgot_password',
   LOGOUT: '/logout',
 
+  
   //APPS
-  PROJECT_LIST: '/project',
+  SPACE: '/space/:spaceCode/',
+  TEAM: '/team',
+  
+  CHAT: '/chat',
 
-  PROJECT: '/project/:code',
-  PROJECT_OVERVIEW: '/overview',
-  PROJECT_BOARD: '/board',
-  PROJECT_GANTT: '/gantt',
-  PROJECT_WORKFLOW: '/workflow',
-  PROJECT_CALENDAR: '/calendar',
-  PROJECT_DASHBOARD: '/dashboard',
-  PROJECT_FILE: '/file',
-  PROJECT_MEMBER: '/member',
+  PROJECT_LIST: 'project',
+
+  PROJECT_DETAIL: 'project/:projectCode/',
+  PROJECT_OVERVIEW: 'overview',
+  PROJECT_BOARD: 'board',
+  PROJECT_GANTT: 'gantt',
+  PROJECT_WORKFLOW: 'workflow',
+  PROJECT_CALENDAR: 'calendar',
+  PROJECT_DASHBOARD: 'dashboard',
+  PROJECT_FILE: 'file',
+  PROJECT_MEMBER: 'member',
 }
 
 export default paths

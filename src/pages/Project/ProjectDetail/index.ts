@@ -6,3 +6,4 @@ import ProjectOverview from './ProjectOverview'
 import ProjectWorkflow from './ProjectWorkflow'
 
 export { ProjectBoard, ProjectCalendar, ProjectGantt, ProjectFile, ProjectOverview, ProjectWorkflow }
+export { default } from './ProjectDetail'

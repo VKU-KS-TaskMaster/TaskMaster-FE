@@ -1,16 +1,17 @@
 import paths from '@constants/paths'
+import Home from '@pages/Home'
+import Logout from '@pages/Auth/Logout'
 import AuthLayout from '@layouts/AuthLayout'
 import MainLayout from '@layouts/MainLayout'
-import { Login, Register } from '@pages/Auth'
+import ProjectList from '@pages/Project'
+import ProjectMember from '@pages/Project/ProjectDetail/ProjectMember'
 import RejectedRoute from './RejectedRoute'
 import ProtectedRoute from './ProtectedRoute'
-import Home from '@pages/Home'
-import { ConfirmForgetPassword, ForgetPassword } from '@pages/Auth/ForgetPassword'
-import ProjectList from '@pages/Project'
-import { ProjectBoard, ProjectCalendar, ProjectFile, ProjectGantt, ProjectOverview, ProjectWorkflow } from '@pages/Project/ProjectDetail'
 import ProjectDashboard from '@pages/Project/ProjectDetail/ProjectDashboard'
-import ProjectMember from '@pages/Project/ProjectDetail/ProjectMember'
-import Logout from '@pages/Auth/Logout'
+import { Login, Register } from '@pages/Auth'
+import { ConfirmForgetPassword, ForgetPassword } from '@pages/Auth/ForgetPassword'
+import ProjectDetail, { ProjectBoard, ProjectCalendar, ProjectFile, ProjectGantt, ProjectOverview, ProjectWorkflow } from '@pages/Project/ProjectDetail'
+import Space from '@pages/Space'
 
 const appRoute = [
   {
@@ -18,51 +19,52 @@ const appRoute = [
     // element: <ProtectedRoute />,
     children: [
       {
+        path: paths.SPACE,
         element: <MainLayout />,
         children: [
           {
-            path: paths.HOME,
-            element: <Home />
+            path: '',
+            element: <Space />
           },
           {
-              path: paths.PROJECT_LIST,
-              element: <ProjectList />,
+            path: paths.PROJECT_LIST,
+            element: <ProjectList />,
           },
           {
-            path: paths.PROJECT,
-            element: <Home />,
+            path: paths.PROJECT_DETAIL,
+            element: <ProjectDetail />,
             children: [
               {
-                  path: paths.PROJECT_OVERVIEW,
-                  element: <ProjectOverview />
+                path: paths.PROJECT_OVERVIEW,
+                element: <ProjectOverview />
               },
               {
-                  path: paths.PROJECT_BOARD,
-                  element: <ProjectBoard />
+                path: paths.PROJECT_BOARD,
+                element: <ProjectBoard />
               },
               {
-                  path: paths.PROJECT_GANTT,
-                  element: <ProjectGantt />
+                path: paths.PROJECT_GANTT,
+                element: <ProjectGantt />
               },
               {
-                  path: paths.PROJECT_WORKFLOW,
-                  element: <ProjectWorkflow />
+                path: paths.PROJECT_WORKFLOW,
+                element: <ProjectWorkflow />
               },
               {
-                  path: paths.PROJECT_DASHBOARD,
-                  element: <ProjectDashboard />
+                path: paths.PROJECT_DASHBOARD,
+                element: <ProjectDashboard />
               },
               {
-                  path: paths.PROJECT_CALENDAR,
-                  element: <ProjectCalendar />
+                path: paths.PROJECT_CALENDAR,
+                element: <ProjectCalendar />
               },
               {
-                  path: paths.PROJECT_FILE,
-                  element: <ProjectFile />
+                path: paths.PROJECT_FILE,
+                element: <ProjectFile />
               },
               {
-                  path: paths.PROJECT_MEMBER,
-                  element: <ProjectMember />
+                path: paths.PROJECT_MEMBER,
+                element: <ProjectMember />
               }
             ]
           }
@@ -74,6 +76,11 @@ const appRoute = [
     path: '',
     element: <RejectedRoute />,
     children: [
+
+      {
+        path: paths.HOME,
+        element: <Home />
+      },
       {
         element: <AuthLayout />,
         children: [
