@@ -1,3 +1,5 @@
-function ProjectBoard() {}
+function ProjectBoard() {
+  return <></>
+}
 
 export default ProjectBoard

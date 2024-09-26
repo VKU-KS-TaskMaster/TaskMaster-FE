@@ -1,3 +1,5 @@
-function ForgetPassword() {}
+function ForgetPassword() {
+  return <></>
+}
 
 export default ForgetPassword

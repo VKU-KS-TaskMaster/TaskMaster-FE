@@ -1,3 +1,5 @@
-function ConfirmForgetPassword() {}
+function ConfirmForgetPassword() {
+  return <></>
+}
 
 export default ConfirmForgetPassword

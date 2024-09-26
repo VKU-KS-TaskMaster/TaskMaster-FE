@@ -1,3 +1,5 @@
-function ProjectWorkflow() {}
+function ProjectWorkflow() {
+  return <></>
+}
 
 export default ProjectWorkflow

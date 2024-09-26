@@ -1,3 +1,5 @@
-function ProjectOverview() {}
+function ProjectOverview() {
+  return <></>
+}
 
 export default ProjectOverview

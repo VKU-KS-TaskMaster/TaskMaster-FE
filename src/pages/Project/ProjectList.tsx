@@ -1,3 +1,5 @@
-function ProjectList() {}
+function ProjectList() {
+  return <></>
+}
 
 export default ProjectList

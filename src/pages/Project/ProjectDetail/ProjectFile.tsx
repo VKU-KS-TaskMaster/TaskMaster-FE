@@ -1,3 +1,5 @@
-function ProjectFile() {}
+function ProjectFile() {
+  return <></>
+}
 
 export default ProjectFile

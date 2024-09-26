@@ -1,3 +1,5 @@
-function ProjectDashboard() {}
+function ProjectDashboard() {
+  return <></>
+}
 
 export default ProjectDashboard
