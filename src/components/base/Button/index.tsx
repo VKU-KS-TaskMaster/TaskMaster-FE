@@ -27,7 +27,7 @@ export const DEFINE_BUTTON_CLASS_NAME: DefineButtonColorType = {
   [`${ButtonType.PRIMARY}_${ButtonVariant.GHOST}`]:
     'border-btn-border text-text hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover',
   [`${ButtonType.DEFAULT}_${ButtonVariant.SQUARE}`]:
-    'group justify-center bg-transparent border-transparent shadow-none hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover',
+    'group justify-center bg-transparent border-transparent hover:text-text text-textWeak shadow-none hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover',
   [`${ButtonType.PRIMARY}_${ButtonVariant.SQUARE}`]:
     'justify-center bg-transparent border-transparent shadow-none hover:bg-btn-bgHover active:bg-btn-bgActive active:border-btn-borderHover'
 }
