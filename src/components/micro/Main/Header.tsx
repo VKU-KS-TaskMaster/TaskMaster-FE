@@ -1,23 +1,23 @@
-import { Divider, Tooltip, TooltipProps } from 'antd'
+import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
-import DropdownMenu, { DEFINE_MENU_TYPE } from '@components/common/DropdownMenu'
 import {
-    CreateIcon,
-    CreateReminderIcon,
-    InviteIcon,
-    OpenNotepadIcon,
-    OpenQuickActionIcon,
-    OpenTaskIcon,
-    ProjectOverviewIcon,
-    SearchIcon,
-    SpaceIcon,
-    TaskIcon,
-    TeamIcon,
-    UpgradeIcon
+  CreateIcon,
+  CreateReminderIcon,
+  InviteIcon,
+  OpenNotepadIcon,
+  OpenQuickActionIcon,
+  OpenTaskIcon,
+  ProjectOverviewIcon,
+  SearchIcon,
+  SpaceIcon,
+  TaskIcon,
+  TeamIcon,
+  UpgradeIcon
 } from '@components/common/Icon'
+import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import colors from '@constants/colors'
 import UserAction from './UserAction'
 
@@ -29,42 +29,10 @@ type MENU_BUTTON_TYPE = {
   tooltip: TooltipProps
 }
 
-const MENU_CREATE: DEFINE_MENU_TYPE[] = [
-  {
-    SPACE: {
-      key: 'spaceItem',
-      icon: <SpaceIcon />,
-      title: 'createAction.spaceItem',
-      onClick: () => {}
-    },
-    PROJECT: {
-      key: 'projectItem',
-      icon: <ProjectOverviewIcon />,
-      title: 'createAction.projectItem',
-      onClick: () => {}
-    },
-    TASK: {
-      key: 'taskItem',
-      icon: <TaskIcon />,
-      title: 'createAction.taskItem',
-      onClick: () => {}
-    },
-    TEAM: {
-      key: 'teamItem',
-      icon: <TeamIcon />,
-      title: 'createAction.teamItem',
-      onClick: () => {}
-    }
-  },
-  {
-    INVITE: {
-      key: 'inviteItem',
-      icon: <InviteIcon />,
-      title: 'createAction.inviteItem',
-      onClick: () => {}
-    }
-  }
-]
+const TRANSL_CONFIG = {
+  ns: 'cms',
+  prefix: 'layout.header'
+}
 
 const MENU_BUTTON: MENU_BUTTON_TYPE[] = [
   {
@@ -109,6 +77,74 @@ const MENU_BUTTON: MENU_BUTTON_TYPE[] = [
   }
 ]
 
+const MENU_CREATE_ITEMS: MenuProps['items'] = [
+  {
+    key: 'spaceItem',
+    type: 'item',
+    className: 'group',
+    label: (
+      <MenuLabelTranslItem
+        icon={<SpaceIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='createAction.spaceItem'
+      />
+    )
+  },
+  {
+    key: 'projectItem',
+    type: 'item',
+    className: 'group',
+    label: (
+      <MenuLabelTranslItem
+        icon={<ProjectOverviewIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='createAction.projectItem'
+      />
+    )
+  },
+  {
+    key: 'taskItem',
+    type: 'item',
+    className: 'group',
+    label: (
+      <MenuLabelTranslItem
+        icon={<TaskIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='createAction.taskItem'
+      />
+    )
+  },
+  {
+    key: 'teamItem',
+    type: 'item',
+    className: 'group',
+    label: (
+      <MenuLabelTranslItem
+        icon={<TeamIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='createAction.teamItem'
+      />
+    )
+  },
+  {
+    key: 'inviteItem',
+    type: 'item',
+    className: 'group',
+    label: (
+      <MenuLabelTranslItem
+        icon={<InviteIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='createAction.inviteItem'
+      />
+    )
+  }
+]
+
 function Header() {
   const { t } = useTranslation(['cms'], {
     keyPrefix: 'layout.header'
@@ -117,11 +153,11 @@ function Header() {
   return (
     <div className='grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2'>
       <div className='col-span-4 flex flex-row'>
-        <DropdownMenu menus={MENU_CREATE} t={t}>
+        <Dropdown menu={{ items: MENU_CREATE_ITEMS }} trigger={['click']}>
           <Button variant={ButtonVariant.GHOST} type={ButtonType.PRIMARY} icon={<CreateIcon />}>
             {t('createBtn')}
           </Button>
-        </DropdownMenu>
+        </Dropdown>
       </div>
       <Button
         variant={ButtonVariant.GHOST}
