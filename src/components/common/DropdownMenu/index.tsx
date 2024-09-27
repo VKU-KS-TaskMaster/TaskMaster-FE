@@ -6,6 +6,7 @@ export type DEFINE_MENU_ITEM_TYPE = {
   key: string
   icon?: ReactNode
   title: string
+  children?: DEFINE_MENU_TYPE[]
   onClick?: (data: DEFINE_MENU_ITEM_TYPE) => void
 }
 
@@ -23,26 +24,11 @@ export interface DropdownMenuProps {
 }
 
 function DropdownMenu({ menus, t, children, dropdownProps, menuProps, menuItemProps }: DropdownMenuProps) {
-  const renderMenuItems = (menu: DEFINE_MENU_TYPE) => {
-    return Object.values(menu).map((item) => (
-      <Menu.Item
-        key={item.key}
-        icon={item.icon}
-        title={t(item.title)}
-        className='mx-1 rounded-md text-textWeak hover:bg-bg-active hover:text-text'
-        onClick={() => item.onClick?.(item)}
-        {...menuItemProps}
-      >
-        {t(item.title)}
-      </Menu.Item>
-    ))
-  }
-
-  return (
-    <Dropdown
-      placement='topRight'
+  const renderDropdown = (menus: DEFINE_MENU_TYPE[], children: ReactNode) => {
+    return <Dropdown
+      placement='bottomLeft'
       dropdownRender={() => (
-        <Menu className='bg-bg-weak px-0'>
+        <Menu className='bg-bg-weak px-0' {...menuProps}>
           {menus.map((m, index) => {
             const isLast = index === menus.length - 1
 
@@ -59,7 +45,29 @@ function DropdownMenu({ menus, t, children, dropdownProps, menuProps, menuItemPr
     >
       {children}
     </Dropdown>
-  )
+  }
+
+  const renderMenuItems = (menu: DEFINE_MENU_TYPE) => {
+    return Object.values(menu).map((item) => {
+      const MenuItem = <Menu.Item
+        key={item.key}
+        icon={item.icon}
+        title={t(item.title)}
+        className='mx-1 rounded-md text-textWeak hover:bg-bg-active hover:text-text'
+        onClick={() => item.onClick?.(item)}
+        {...menuItemProps}
+      >
+        {t(item.title)}
+      </Menu.Item>
+
+
+      if (item.children) return renderDropdown(item.children, MenuItem)
+
+      return MenuItem
+    })
+  }
+
+  return renderDropdown(menus, children)
 }
 
 export default DropdownMenu
