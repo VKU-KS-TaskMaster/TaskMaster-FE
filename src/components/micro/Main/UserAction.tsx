@@ -1,6 +1,6 @@
 import { Avatar, Dropdown, MenuProps, Typography } from 'antd'
 
-import Button, { ButtonType, ButtonVarient } from '@components/base/Button'
+import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import {
   ExpandIcon,
   InviteIcon,
@@ -123,7 +123,7 @@ function UserAction() {
       <Button
         icon={<ExpandIcon className='h-3 w-3' />}
         iconPosition='end'
-        variant={ButtonVarient.GHOST}
+        variant={ButtonVariant.GHOST}
         type={ButtonType.PRIMARY}
         className='w-12 gap-1 rounded-3xl p-1'
       >
