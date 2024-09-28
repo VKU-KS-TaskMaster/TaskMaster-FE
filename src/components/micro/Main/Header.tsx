@@ -9,6 +9,7 @@ import UserAction from './UserAction'
 import CreateModal from '@components/common/CreateModal'
 import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
+import { cn } from '@utils/base'
 import {
   CreateIcon,
   CreateReminderIcon,
@@ -24,6 +25,8 @@ import {
   UpgradeIcon
 } from '@components/common/Icon'
 import { TAB_KEYS } from '@components/common/CreateModal'
+
+export const HEADER_HEIGHT = '52px'
 
 type MENU_BUTTON_TYPE = {
   key: string
@@ -174,7 +177,12 @@ function Header() {
   }
 
   return (
-    <div className='grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2'>
+    <div
+      className={cn(
+        'grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2',
+        'h-[var(--header-height)]'
+      )}
+    >
       <div className='col-span-4 flex flex-row'>
         <Dropdown
           menu={{

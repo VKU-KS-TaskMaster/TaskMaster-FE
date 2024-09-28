@@ -38,7 +38,10 @@ export default {
         textWeak: 'rgba(162, 160, 162, 1)',
         iconSuccess: 'rgba(93, 162, 131, 1)',
 
-        projectItemHover: 'rgba(43, 44, 46, 0.5)'
+        projectItemHover: 'rgba(43, 44, 46, 0.5)',
+
+        'primary-1': 'rgba(230, 247, 255, 1)',
+        'primary-6': 'rgba(24, 144, 255, 1)'
       }
     }
   },
