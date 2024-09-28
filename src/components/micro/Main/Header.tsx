@@ -19,7 +19,10 @@ import {
 } from '@components/common/Icon'
 import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import colors from '@constants/colors'
+import { cn } from '@utils/base'
 import UserAction from './UserAction'
+
+export const HEADER_HEIGHT = '52px'
 
 type MENU_BUTTON_TYPE = {
   key: string
@@ -151,7 +154,12 @@ function Header() {
   })
 
   return (
-    <div className='grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2'>
+    <div
+      className={cn(
+        'grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2',
+        'h-[var(--header-height)]'
+      )}
+    >
       <div className='col-span-4 flex flex-row'>
         <Dropdown menu={{ items: MENU_CREATE_ITEMS }} trigger={['click']}>
           <Button variant={ButtonVariant.GHOST} type={ButtonType.PRIMARY} icon={<CreateIcon />}>
