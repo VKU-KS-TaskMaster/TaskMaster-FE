@@ -1,11 +1,8 @@
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
 import ChainedBackend from 'i18next-chained-backend'
 import HttpBackend from 'i18next-http-backend'
 import resourcesToBackend from 'i18next-resources-to-backend'
-
-import enCms from '@constants/translations/en/cms.json'
-import viCms from '@constants/translations/vi/cms.json'
+import { initReactI18next } from 'react-i18next'
 
 //Client
 // i18n.use(initReactI18next).init({
@@ -36,8 +33,8 @@ i18n
   .use(ChainedBackend)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'vi',
-    lng: 'vi',
+    fallbackLng: 'en',
+    lng: 'en',
     preload: ['vi', 'en'],
     ns: ['cms'],
     interpolation: {

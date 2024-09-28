@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-
   /* Roboto Regular (400) */
   @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local('Roboto'), local('Roboto-Regular'),
+    src:
+      local('Roboto'),
+      local('Roboto-Regular'),
       url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
   }
 
@@ -20,7 +21,9 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local('Roboto-Bold'), local('Roboto-Bold'),
+    src:
+      local('Roboto-Bold'),
+      local('Roboto-Bold'),
       url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
   }
 
@@ -30,7 +33,9 @@
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: local('Roboto-Light'), local('Roboto-Light'),
+    src:
+      local('Roboto-Light'),
+      local('Roboto-Light'),
       url('/fonts/Roboto/Roboto-Light.ttf') format('truetype');
   }
 
@@ -40,7 +45,9 @@
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: local('Roboto-Medium'), local('Roboto-Medium'),
+    src:
+      local('Roboto-Medium'),
+      local('Roboto-Medium'),
       url('/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
   }
 
@@ -50,7 +57,9 @@
     font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: local('Roboto-Italic'), local('Roboto-Italic'),
+    src:
+      local('Roboto-Italic'),
+      local('Roboto-Italic'),
       url('/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
   }
 
@@ -60,7 +69,9 @@
     font-style: italic;
     font-weight: 700;
     font-display: swap;
-    src: local('Roboto-BoldItalic'), local('Roboto-BoldItalic'),
+    src:
+      local('Roboto-BoldItalic'),
+      local('Roboto-BoldItalic'),
       url('/fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
   }
 
@@ -70,4 +81,8 @@
   button {
     font-family: 'Roboto', sans-serif;
   }
+}
+
+:root {
+  --header-height: 52px;
 }

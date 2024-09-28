@@ -13,6 +13,7 @@ import {
   DownOutlined,
   EditOutlined,
   EllipsisOutlined,
+  FileOutlined,
   FileProtectOutlined,
   FilterOutlined,
   GoogleOutlined,
@@ -226,6 +227,10 @@ export const HomeIcon = ({ width = 16, height = 16, className = '', color }: Ico
 
 export const InboxIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
   return <InboxOutlined width={width} height={height} color={color} className={className} />
+}
+
+export const DocsIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
+  return <FileOutlined width={width} height={height} color={color} className={className} />
 }
 
 export const DashboardIcon = ({ width = 16, height = 16, className = '', color }: Icon) => {
