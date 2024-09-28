@@ -11,7 +11,7 @@ export const componentToken = {
     colorTextDescription: colors.TEXT,
     colorBgElevated: colors.BG.WEAK,
     controlItemBgHover: colors.BG.ACTIVE,
-    colorSplit: colors.DIVIDER_BG
+    colorSplit: colors.BG.DIVIDER
   },
   Menu: {
     //Light
@@ -33,5 +33,28 @@ export const componentToken = {
     darkItemColor: colors.TEXT_WEAK,
     darkItemHoverBg: colors.BG.ACTIVE,
     darkItemHoverColor: colors.TEXT
+  },
+  Modal: {
+    //Dark
+    headerBg: colors.NAVIGATION.SIDEBAR_BG,
+    contentBg: colors.NAVIGATION.SIDEBAR_BG,
+    footerBg: colors.BG.INPUT_MODAL,
+    titleColor: colors.TEXT
+  },
+  Form: {
+    labelColor: colors.TEXT_WEAK
+  },
+  Input: {
+    //Dark
+    colorIcon: colors.ICON,
+    colorIconHover: colors.ICON_ACTIVE
+  },
+  Tabs: {
+    //Dark
+    itemColor: colors.TEXT_WEAK,
+    itemHoverColor: colors.TEXT,
+    itemActiveColor: colors.TEXT,
+    itemSelectedColor: colors.TEXT,
+    inkBarColor: colors.TEXT
   }
 }

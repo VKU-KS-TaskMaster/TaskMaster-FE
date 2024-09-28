@@ -70,4 +70,10 @@
   button {
     font-family: 'Roboto', sans-serif;
   }
+
+
+}
+
+.ant-tabs-top>.ant-tabs-nav::before {
+  border-color: rgba(66, 66, 68, 1);
 }
