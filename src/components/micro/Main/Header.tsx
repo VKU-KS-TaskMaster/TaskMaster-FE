@@ -1,8 +1,15 @@
-import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useAppDispatch } from '@features/hook'
+import { setCreateModal } from '@features/slices/base'
+import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 
+import colors from '@constants/colors'
+import UserAction from './UserAction'
+import CreateModal from '@components/common/CreateModal'
+import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
+import { cn } from '@utils/base'
 import {
   CreateIcon,
   CreateReminderIcon,
@@ -17,10 +24,7 @@ import {
   TeamIcon,
   UpgradeIcon
 } from '@components/common/Icon'
-import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
-import colors from '@constants/colors'
-import { cn } from '@utils/base'
-import UserAction from './UserAction'
+import { TAB_KEYS } from '@components/common/CreateModal'
 
 export const HEADER_HEIGHT = '52px'
 
@@ -80,9 +84,17 @@ const MENU_BUTTON: MENU_BUTTON_TYPE[] = [
   }
 ]
 
+const CREATE_ITEM_KEYS = {
+  SPACE: 'spaceItem',
+  PROJECT: 'projectItem',
+  TASK: 'taskItem',
+  TEAM: 'teamItem',
+  INVITE: 'inviteItem'
+}
+
 const MENU_CREATE_ITEMS: MenuProps['items'] = [
   {
-    key: 'spaceItem',
+    key: CREATE_ITEM_KEYS.SPACE,
     type: 'item',
     className: 'group',
     label: (
@@ -92,10 +104,11 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
         prefix={TRANSL_CONFIG.prefix}
         i18nKey='createAction.spaceItem'
       />
-    )
+    ),
+    onClick: () => {}
   },
   {
-    key: 'projectItem',
+    key: CREATE_ITEM_KEYS.PROJECT,
     type: 'item',
     className: 'group',
     label: (
@@ -105,10 +118,11 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
         prefix={TRANSL_CONFIG.prefix}
         i18nKey='createAction.projectItem'
       />
-    )
+    ),
+    onClick: () => {}
   },
   {
-    key: 'taskItem',
+    key: CREATE_ITEM_KEYS.TASK,
     type: 'item',
     className: 'group',
     label: (
@@ -118,10 +132,11 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
         prefix={TRANSL_CONFIG.prefix}
         i18nKey='createAction.taskItem'
       />
-    )
+    ),
+    onClick: () => {}
   },
   {
-    key: 'teamItem',
+    key: CREATE_ITEM_KEYS.TEAM,
     type: 'item',
     className: 'group',
     label: (
@@ -131,10 +146,11 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
         prefix={TRANSL_CONFIG.prefix}
         i18nKey='createAction.teamItem'
       />
-    )
+    ),
+    onClick: () => {}
   },
   {
-    key: 'inviteItem',
+    key: CREATE_ITEM_KEYS.INVITE,
     type: 'item',
     className: 'group',
     label: (
@@ -144,14 +160,21 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
         prefix={TRANSL_CONFIG.prefix}
         i18nKey='createAction.inviteItem'
       />
-    )
+    ),
+    onClick: () => {}
   }
 ]
 
 function Header() {
+  const dispatch = useAppDispatch()
   const { t } = useTranslation(['cms'], {
     keyPrefix: 'layout.header'
   })
+
+  const handleShowCreateModal = (key: string) => {
+    if ([CREATE_ITEM_KEYS.PROJECT, CREATE_ITEM_KEYS.TASK].includes(key))
+      dispatch(setCreateModal({ key: TAB_KEYS.PROJECT_TASK, show: true }))
+  }
 
   return (
     <div
@@ -161,11 +184,18 @@ function Header() {
       )}
     >
       <div className='col-span-4 flex flex-row'>
-        <Dropdown menu={{ items: MENU_CREATE_ITEMS }} trigger={['click']}>
+        <Dropdown
+          menu={{
+            items: MENU_CREATE_ITEMS,
+            onClick: (info) => handleShowCreateModal(info.key)
+          }}
+          trigger={['click']}
+        >
           <Button variant={ButtonVariant.GHOST} type={ButtonType.PRIMARY} icon={<CreateIcon />}>
             {t('createBtn')}
           </Button>
         </Dropdown>
+        <CreateModal />
       </div>
       <Button
         variant={ButtonVariant.GHOST}
@@ -179,7 +209,7 @@ function Header() {
         <Button variant={ButtonVariant.STANDARD} type={ButtonType.PRIMARY} icon={<UpgradeIcon />}>
           {t('upgradeBtn')}
         </Button>
-        <Divider variant='solid' type='vertical' className='m-0 h-6' style={{ borderColor: colors.DIVIDER_BG }} />
+        <Divider variant='solid' type='vertical' className='m-0 h-6' style={{ borderColor: colors.BG.DIVIDER }} />
         {MENU_BUTTON.map((d) => (
           <Tooltip key={d.key} placement={d.tooltip.placement} title={t(`${d.tooltip.title}`)}>
             <Button variant={d.varient} type={d.type} icon={d.icon} />
