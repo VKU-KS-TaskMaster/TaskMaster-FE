@@ -31,7 +31,10 @@ const colors = {
   TEXT_WEAK: 'rgba(162, 160, 162, 1)',
   ICON_SUCCESS: 'rgba(93, 162, 131, 1)',
 
-  PROJECT_ITEM_HOVER: 'rgba(43, 44, 46, 0.5)'
+  PROJECT_ITEM_HOVER: 'rgba(43, 44, 46, 0.5)',
+
+  PRIMARY_1: 'rgba(230, 247, 255, 1)',
+  PRIMARY_6: 'rgba(24, 144, 255, 1)'
 }
 
 export default colors

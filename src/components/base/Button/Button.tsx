@@ -1,3 +1,4 @@
+import { cn } from '@utils/base'
 import type { ButtonProps } from 'antd'
 import { Button as BaseButton } from 'antd'
 
@@ -54,7 +55,6 @@ const Button: React.FC<ButtonCustomProps> = ({
   const key: `${ButtonType}_${ButtonVariant}` = `${type}_${variant}`
   const DEFAULT_CLASS_NAME = DEFINE_BUTTON_CLASS_NAME[key]
   const DEFAULT_ICON_CLASS_NAME = DEFINE_BUTTON_ICON_CLASS_NAME[key] || ''
-  const COMBINED_CLASS_NAME = `${DEFAULT_CLASS_NAME} ${className || ''}`.trim()
   const DEFAULT_PROPS: { [key: string]: boolean | string } = {}
 
   if (variant === ButtonVariant.GHOST || variant === ButtonVariant.DANGEROUS) DEFAULT_PROPS[variant] = true
@@ -65,7 +65,7 @@ const Button: React.FC<ButtonCustomProps> = ({
       type={type}
       {...DEFAULT_PROPS}
       {...props}
-      className={COMBINED_CLASS_NAME}
+      className={cn(DEFAULT_CLASS_NAME, className)}
       classNames={{ icon: DEFAULT_ICON_CLASS_NAME }}
     ></BaseButton>
   )

@@ -1,9 +1,23 @@
 @tailwind base;
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgba(46, 46, 48, 1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(193, 193, 193, 1);
+  border-radius: 14px;
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-
   /* Roboto Regular (400) */
   @font-face {
     font-family: 'Roboto';
@@ -82,14 +96,19 @@
   button {
     font-family: 'Roboto', sans-serif;
   }
-
-
 }
 
 :root {
   --header-height: 52px;
 }
 
-.ant-tabs-top>.ant-tabs-nav::before {
+.ant-tabs-top > .ant-tabs-nav::before {
   border-color: rgba(66, 66, 68, 1);
+}
+
+.ant-tree-list-holder-inner > .ant-tree-treenode {
+  width: 100%;
+}
+.ant-tree-treenode-content-wrapper {
+  width: 100%;
 }
