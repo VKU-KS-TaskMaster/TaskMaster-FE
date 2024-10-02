@@ -1,14 +1,18 @@
 import { Modal, Tabs, TabsProps } from 'antd'
 
-import ProjectTaskForm from './ProjectTaskForm'
+import ProjectForm from './ProjectForm'
 import MenuLabelTranslItem from '../MenuLabelTranslItem'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import { CloseIcon } from '@components/common/Icon'
 import { setCreateModal } from '@features/slices/base'
+import { EllipsisOutlined } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@features/hook'
 
 export const TAB_KEYS = {
-  PROJECT_TASK: 'projectTaskTab'
+  PROJECT: 'projectTab',
+  TASK: 'taskTab',
+  MILESTONE: 'milestoneTab',
+  TEAM: 'teamTab'
 }
 
 const TRANSL_CONFIG = {
@@ -18,22 +22,28 @@ const TRANSL_CONFIG = {
 
 const TAB_ITEMS: TabsProps['items'] = [
   {
-    key: TAB_KEYS.PROJECT_TASK,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='projectTaskTab.title' />,
-    children: <ProjectTaskForm />
+    key: TAB_KEYS.PROJECT,
+    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='projectTab.title' />,
+    children: <ProjectForm />
   },
   {
-    key: '2',
+    key: TAB_KEYS.TASK,
+    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='taskTab.title' />,
+    children: <ProjectForm />
+  },
+  {
+    key: TAB_KEYS.MILESTONE,
     label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='milestoneTab.title' />,
-    children: <ProjectTaskForm />
+    children: <ProjectForm />
   },
   {
-    key: '3',
+    key: TAB_KEYS.TEAM,
     label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='teamTab.title' />
   }
 ]
 
 function CreateModal() {
+  const [modal, contextHolder] = Modal.useModal()
   const activeKey = useAppSelector((state) => state.base.createModal.key)
   const show = useAppSelector((state) => state.base.createModal.show)
   const dispatch = useAppDispatch()
@@ -52,27 +62,29 @@ function CreateModal() {
 
   return (
     <Modal
+      open={show}
+      onOk={handleOk}
+      onCancel={handleCancel}
+      classNames={{
+        content: 'p-0',
+        header: 'm-0',
+        body: 'p-0'
+      }}
       title={
         <Tabs
           tabPosition='top'
           activeKey={activeKey}
           items={TAB_ITEMS}
+          onChange={handleTabOnChange}
           tabBarStyle={{
             margin: 0,
             padding: '0 1.5rem'
           }}
-          onChange={handleTabOnChange}
+          more={{
+            icon: <EllipsisOutlined className='text-textWeak hover:text-text' />
+          }}
         />
       }
-      classNames={{
-        content: 'p-0',
-        header: 'm-0',
-        body: 'p-0',
-        footer: 'm-0 px-4 py-2'
-      }}
-      open={show}
-      onOk={handleOk}
-      onCancel={handleCancel}
       closeIcon={
         <Button
           className='mt-[-8px]'
@@ -82,6 +94,7 @@ function CreateModal() {
           onClick={handleCancel}
         />
       }
+      footer={<></>}
     />
   )
 }

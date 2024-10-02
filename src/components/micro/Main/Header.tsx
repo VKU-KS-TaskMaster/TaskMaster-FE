@@ -10,6 +10,7 @@ import CreateModal from '@components/common/CreateModal'
 import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import { cn } from '@utils/base'
+import { TAB_KEYS } from '@components/common/CreateModal'
 import {
   CreateIcon,
   CreateReminderIcon,
@@ -24,7 +25,6 @@ import {
   TeamIcon,
   UpgradeIcon
 } from '@components/common/Icon'
-import { TAB_KEYS } from '@components/common/CreateModal'
 
 export const HEADER_HEIGHT = '52px'
 
@@ -172,8 +172,8 @@ function Header() {
   })
 
   const handleShowCreateModal = (key: string) => {
-    if ([CREATE_ITEM_KEYS.PROJECT, CREATE_ITEM_KEYS.TASK].includes(key))
-      dispatch(setCreateModal({ key: TAB_KEYS.PROJECT_TASK, show: true }))
+    if (key === CREATE_ITEM_KEYS.PROJECT) dispatch(setCreateModal({ key: TAB_KEYS.PROJECT, show: true }))
+    if (key === CREATE_ITEM_KEYS.TASK) dispatch(setCreateModal({ key: TAB_KEYS.TASK, show: true }))
   }
 
   return (
