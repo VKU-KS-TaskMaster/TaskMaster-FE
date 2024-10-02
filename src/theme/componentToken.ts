@@ -5,7 +5,14 @@ export const componentToken = {
     borderRadius: 6,
     textTextColor: colors.TEXT
   },
-  Select: {},
+  Tabs: {
+    //Dark
+    itemColor: colors.TEXT_WEAK,
+    itemHoverColor: colors.TEXT,
+    itemActiveColor: colors.TEXT,
+    itemSelectedColor: colors.TEXT,
+    inkBarColor: colors.TEXT
+  },
   Dropdown: {
     colorText: colors.TEXT_WEAK,
     colorTextDescription: colors.TEXT,
@@ -39,7 +46,16 @@ export const componentToken = {
     headerBg: colors.NAVIGATION.SIDEBAR_BG,
     contentBg: colors.NAVIGATION.SIDEBAR_BG,
     footerBg: colors.BG.INPUT_MODAL,
-    titleColor: colors.TEXT
+    titleColor: colors.TEXT,
+    colorText: colors.TEXT_WEAK
+  },
+  Notification: {
+    //Dark
+    colorBgElevated: colors.BG.WEAK,
+    colorIcon: colors.ICON,
+    colorIconHover: colors.ICON_ACTIVE,
+    colorTextHeading: colors.TEXT,
+    colorText: colors.TEXT_WEAK
   },
   Form: {
     labelColor: colors.TEXT_WEAK
@@ -49,12 +65,27 @@ export const componentToken = {
     colorIcon: colors.ICON,
     colorIconHover: colors.ICON_ACTIVE
   },
-  Tabs: {
-    //Dark
-    itemColor: colors.TEXT_WEAK,
-    itemHoverColor: colors.TEXT,
-    itemActiveColor: colors.TEXT,
-    itemSelectedColor: colors.TEXT,
-    inkBarColor: colors.TEXT
+  Select: {
+    selectorBg: colors.BG.INPUT_MODAL,
+    optionActiveBg: colors.BG.ACTIVE,
+    optionSelectedBg: colors.BG.ACTIVE,
+    optionSelectedColor: colors.TEXT,
+    colorText: colors.TEXT_WEAK,
+
+    colorBorder: colors.BG.INPUT_MODAL,
+    colorPrimary: colors.BG.INPUT_MODAL,
+    colorPrimaryHover: colors.BG.INPUT_MODAL,
+    colorTextPlaceholder: colors.TEXT_WEAK,
+    colorTextQuaternary: colors.TEXT_WEAK,
+    colorBgElevated: colors.BG.WEAK,
+    borderRadius: 0,
+    controlOutlineWidth: 0
+  },
+  DatePicker: {
+    colorBorder: colors.BG.INPUT_MODAL,
+    colorTextPlaceholder: colors.TEXT_WEAK,
+    colorTextDisabled: colors.TEXT_WEAK,
+    colorTextDescription: colors.ICON_ACTIVE,
+    controlOutlineWidth: 0
   }
 }
