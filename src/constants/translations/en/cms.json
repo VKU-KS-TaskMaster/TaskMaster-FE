@@ -60,28 +60,42 @@
 
   "modal": {
     "create": {
-      "descriptionTitle": "Desctiption",
+      "descTitle": "Desctiption",
+      "descPlaceholder": "",
+      "descRequired": "Input your description",
       "statusTitle": "Status",
+
       "beginDateTitle": "Begin date",
       "dueDateTitle": "Due date",
       "memberTitle": "Members",
+      "memberPlaceholder": "Input and search members",
       "teamTitle": "Teams",
+      "teamPlaceholder": "Input and search teams",
       "attachmentTitle": "Attachments",
       "attachmentText": "Drag and drop files to attach or",
-      "currencyTitle": "Tiền tệ",
 
-      "projectTaskTab": {
-        "title": "Project/Task",
-        "projectOption": "Project",
-        "taskOption": "Task",
-        "projectNameTitle": "Project name",
-        "taskNameTitle": "Task name",
-        "projectTitle": "Project"
+      "projectTab": {
+        "title": "Project",
+        "nameTitle": "Project name",
+        "namePlaceholder": "",
+        "nameRequired": "Input your project's name",
+        "currencyTitle": "Currency"
+      },
+      "taskTab": {
+        "title": "Task",
+        "nameTitle": "Task name",
+        "namePlaceholder": "",
+        "nameRequired": "Input your task's name",
+        "projectTitle": "Project name",
+        "projectPlaceholder": "Input and search projects",
+        "projectRequired": "Need to choose a project for this task"
       },
       "milestoneTab": {
         "title": "Milestone",
         "nameTitle": "Milestone name",
-        "projectTitle": "Project"
+        "projectTitle": "Project",
+        "projectPlaceholder": "Input and search projects",
+        "projectRequired": "Need to choose a project for this task"
       },
       "teamTab": {
         "title": "Team",
@@ -104,8 +118,8 @@
     "milestoneDetail": {
       "dueDateTitle": "Due date",
       "dueDateBtnTooltip": "Add due date",
-      "descriptionTitle": "Description",
-      "descriptionPlaceholder": "What's this milestone about?",
+      "descTitle": "Description",
+      "descPlaceholder": "What's this milestone about?",
 
       "taskTitle": "Tasks",
       "assignMemberBtnTooltip": "Assign this milestone",
@@ -167,5 +181,10 @@
     "dayAgo": "days ago",
     "monthAgo": "months ago",
     "yearAgo": "years ago"
+  },
+
+  "notificationToast": {
+    "createTitle": "Your {{entityName}} created successfully!",
+    "createSuccessDescription": "Your {{entityName}}'s code is {{entityCode}}.<br/> Access the {{entityName}}: <entityLink>Clicked</entityLink>"
   }
 }

@@ -60,28 +60,41 @@
 
   "modal": {
     "create": {
-      "descriptionTitle": "Mô tả",
+      "descTitle": "Mô tả",
+      "descPlaceholder": "",
+      "descRequired": "Nhập mô tả..",
       "statusTitle": "Trạng thái",
       "beginDateTitle": "Ngày bắt đầu",
       "dueDateTitle": "Ngày kết thúc",
       "memberTitle": "Thành viên",
+      "memberPlaceholder": "Tìm kiếm thành viên",
       "teamTitle": "Nhóm",
+      "teamPlaceholder": "Tìm kiếm đội nhóm",
       "attachmentTitle": "Đính kèm",
       "attachmentText": "Kéo và thả tài liệu hoặc",
-      "currencyTitle": "Tiền tệ",
 
-      "projectTaskTab": {
-        "title": "Dự án/Công việc",
-        "projectOption": "Dự án",
-        "taskOption": "Công việc",
-        "projectNameTitle": "Tên dự án",
-        "taskNameTitle": "Tên công việc",
-        "projectTitle": "Dự án"
+      "projectTab": {
+        "title": "Dự án",
+        "nameTitle": "Tên dự án",
+        "namePlaceholder": "",
+        "nameRequired": "Tên dự án không được để trống!",
+        "currencyTitle": "Tiền tệ"
+      },
+      "taskTab": {
+        "title": "Công việc",
+        "nameTitle": "Tên công việc",
+        "namePlaceholder": "",
+        "nameRequired": "Tên công việc không được để trống!",
+        "projectTitle": "Dự án",
+        "projectPlaceholder": "Tìm kiếm dự án",
+        "projectRequired": "Công việc phải ở trong một dự án!"
       },
       "milestoneTab": {
         "title": "Milestone",
         "nameTitle": "Milestone name",
-        "projectTitle": "Dự án"
+        "projectTitle": "Dự án",
+        "projectPlaceholder": "Tìm kiếm dự án",
+        "projectRequired": "Công việc phải ở trong một dự án!"
       },
       "teamTab": {
         "title": "Đội ngũ",
@@ -104,8 +117,8 @@
     "milestoneDetail": {
       "dueDateTitle": "Ngày hết hạn",
       "dueDateBtnTooltip": "Thêm hạn",
-      "descriptionTitle": "Mô tả",
-      "descriptionPlaceholder": "Nội dung, lí do, mục tiêu,..",
+      "descTitle": "Mô tả",
+      "descPlaceholder": "Nội dung, lí do, mục tiêu,..",
 
       "taskTitle": "Danh sách công việc",
       "assignMemberBtnTooltip": "Thêm thành viên",
@@ -167,5 +180,10 @@
     "dayAgo": "ngày trước",
     "monthAgo": "tháng trước",
     "yearAgo": "năm trước"
+  },
+
+  "notificationToast": {
+    "createTitle": "{{entityName}} của bạn được tạo thành công!",
+    "createSuccessDescription": "Mã {{entityName}} là {{entityCode}}.<br/> Truy cập vào {{entityName}}: <entityLink>Xem</entityLink>"
   }
 }
