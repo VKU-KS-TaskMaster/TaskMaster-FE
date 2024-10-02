@@ -7,7 +7,6 @@ import { seedToken } from './seedToken'
 const { defaultAlgorithm, darkAlgorithm } = theme
 
 export const lightTheme = {
-  cssVar: true,
   algorithm: defaultAlgorithm,
   cssVar: true,
   token: {
@@ -19,7 +18,6 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  cssVar: true,
   algorithm: darkAlgorithm,
   cssVar: true,
   token: {
