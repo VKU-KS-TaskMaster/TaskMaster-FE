@@ -17,7 +17,6 @@ const router = createBrowserRouter(appRoute)
 
 function App() {
   const [darkMode] = useTheme()
-  console.log('🚀 ~ App ~ darkMode:', darkMode)
 
   return (
     <QueryClientProvider client={queryClient}>
