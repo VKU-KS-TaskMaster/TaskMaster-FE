@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => {
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
 
   return (
-    <div className='flex h-full w-56 flex-col overflow-hidden bg-navigation-headerBg text-textWeak'>
+    <div className='text-text-weak flex h-full w-56 flex-col overflow-hidden bg-navigation-headerBg'>
       <div className='gap-4 border-b border-borderBottom p-2'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
@@ -89,7 +89,7 @@ const Sidebar: React.FC = () => {
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
       <Divider type='horizontal' variant='solid' className='my-2 bg-borderBottom' />
       <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
-        <div className='flex items-center justify-between font-bold text-text'>
+        <div className='text-text-light flex items-center justify-between font-bold'>
           {isSearch ? (
             <>
               <Button
@@ -117,7 +117,7 @@ const Sidebar: React.FC = () => {
                   onBlur={() => searchValue === '' && setIsSearch(false)}
                   suffix={
                     <Button
-                      icon={<CloseIcon className='text-[12px] text-textWeak' />}
+                      icon={<CloseIcon className='text-text-weak text-[12px]' />}
                       size='small'
                       onClick={() => setSearchValue('')}
                     />
@@ -141,7 +141,7 @@ const Sidebar: React.FC = () => {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='justify-start p-0 text-textWeak hover:text-text'
+          className='text-text-weak hover:text-text-light justify-start p-0'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<ProjectBoardIcon />}
@@ -150,7 +150,7 @@ const Sidebar: React.FC = () => {
           <span className='text-sm'>{t('projectListBtn')}</span>
         </Button>
         <Button
-          className='justify-start p-0 text-textWeak hover:text-text'
+          className='text-text-weak hover:text-text-light justify-start p-0'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<PlusOutlined />}

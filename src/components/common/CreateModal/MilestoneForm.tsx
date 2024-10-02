@@ -32,7 +32,7 @@ function ProjectTaskForm() {
       >
         <Input
           placeholder=''
-          className='rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 text-text outline-none focus:border-text focus:outline-0 focus:ring-0'
+          className='text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
         />
       </Form.Item>
 

@@ -16,8 +16,12 @@ export default {
         btn: {
           bgHover: 'rgba(255, 255, 255, 0.1)',
           bgActive: 'rgba(255, 255, 255, 0.2)',
+          lightBgHover: 'rgba(245, 243, 243, 1)',
+          lightBgActive: 'rgba(55,23,23,.08)',
           border: 'rgba(106, 105, 106, 0.5)',
-          borderHover: 'rgba(106, 105, 106, 1)'
+          borderHover: 'rgba(106, 105, 106, 1)',
+          lightBorderHover: 'rgba(106, 105, 106, 1)',
+          lightBorderActive: 'rgba(109, 110, 111, 1)'
         },
 
         bg: {
@@ -34,8 +38,11 @@ export default {
         icon: 'rgba(162, 160, 162, 0.85)',
         iconActive: 'rgba(255, 255, 255, 1)',
         borderBottom: 'rgba(66, 66, 68, 1)',
-        text: 'rgba(245, 244, 243, 1)',
-        textWeak: 'rgba(162, 160, 162, 1)',
+        text: {
+          weak: 'rgba(162, 160, 162, 1)',
+          dark: 'rgba(30, 31, 33, 1)',
+          light: 'rgba(245, 244, 243, 1)'
+        },
         iconSuccess: 'rgba(93, 162, 131, 1)',
 
         projectItemHover: 'rgba(43, 44, 46, 0.5)',

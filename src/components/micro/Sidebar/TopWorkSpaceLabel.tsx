@@ -11,7 +11,7 @@ const TopWorkspaceLabel: React.FC = () => (
       icon={<UserOutlined />}
     />
     <div className='flex-1 overflow-hidden'>
-      <span className='block w-40 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium leading-snug text-text'>
+      <span className='text-text-light block w-40 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-medium leading-snug'>
         Work Space
       </span>
       <span className='text-xs'>Free Forever</span>

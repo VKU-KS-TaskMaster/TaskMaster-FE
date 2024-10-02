@@ -9,6 +9,7 @@ import paths from '@constants/paths'
 import UploadBox from '@components/common/UploadBox'
 import SpaceAPI from '@apis/space.api'
 import ProjectAPI from '@apis/project.api'
+import DebounceSelect from '@components/common/Select'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import { useAppDispatch } from '@features/hook'
 import ProjectStatusEnumTransl, {
@@ -27,7 +28,6 @@ import ProjectCurrencyEnumTransl, {
 } from '@constants/enums/project/ProjectCurrencyEnum'
 import { setCreateModal } from '@features/slices/base'
 import { Link, useParams } from 'react-router-dom'
-import DebounceSelect from '../Select/DebounceSelect'
 
 type FieldType = Record<FORM_ITEM_KEYS, string>
 
@@ -219,7 +219,10 @@ function ProjectForm() {
               values={{ entityCode: data.code, entityName: tModal('projectTab.title') }}
               components={{
                 entityLink: (
-                  <Link className='text-text underline' to={paths.PROJECT_DETAIL.replace(':projectCode', data.code)} />
+                  <Link
+                    className='text-text-light underline'
+                    to={paths.PROJECT_DETAIL.replace(':projectCode', data.code)}
+                  />
                 )
               }}
             ></Trans>
@@ -252,7 +255,7 @@ function ProjectForm() {
           >
             <Input
               placeholder={tModal(FORM_ITEMS.name?.placeholder)}
-              className='rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 text-text outline-none placeholder:text-textWeak focus:border-text focus:outline-0 focus:ring-0'
+              className='placeholder:text-text-weak text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
             />
           </Form.Item>
           <Form.Item<FieldType>
@@ -263,7 +266,7 @@ function ProjectForm() {
             <Input.TextArea
               rows={3}
               placeholder={tModal(FORM_ITEMS.description?.placeholder)}
-              className='rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 text-text outline-none placeholder:text-textWeak focus:border-text focus:outline-0 focus:ring-0'
+              className='placeholder:text-text-weak text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
             />
           </Form.Item>
           <div className='flex gap-3'>
@@ -315,7 +318,7 @@ function ProjectForm() {
                 format={dateFormat}
                 type={FORM_ITEMS.begin_date.type}
                 defaultValue={dayjs(new Date())}
-                className='w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 text-textWeak hover:text-text'
+                className='text-text-weak hover:text-text-light w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1'
               />
             </Form.Item>
             <Form.Item<FieldType>
@@ -328,7 +331,7 @@ function ProjectForm() {
                 format={dateFormat}
                 type={FORM_ITEMS.due_date.type}
                 defaultValue={dayjs(new Date())}
-                className='w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 text-textWeak hover:text-text'
+                className='text-text-weak hover:text-text-light w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1'
               />
             </Form.Item>
           </div>
