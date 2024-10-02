@@ -1,6 +1,7 @@
 import http from '@utils/http'
 import APIPaths from '@constants/apiPaths'
 import SpaceCode, { SpaceSearch, SpaceStore, SpaceUpdate } from '@models/space.type'
+import { MemberSearch } from '@models/member.type'
 
 const SpaceAPI = {
   get: async (key: SpaceCode) => {
@@ -27,6 +28,12 @@ const SpaceAPI = {
     const apiPath = APIPaths.SPACE.DESTROY.replace(':key', key)
 
     return http.delete(apiPath)
+  },
+
+  searchMembers: async (key: SpaceCode, data: MemberSearch) => {
+    const apiPath = APIPaths.SPACE.SEARCH_MEMBERS.replace(':key', key)
+
+    return http.get(apiPath, { params: data })
   }
 }
 

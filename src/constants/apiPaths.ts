@@ -16,7 +16,9 @@ const APIPaths = {
     SEARCH: `${SPACE_API_PATH}`,
     STORE: `${SPACE_API_PATH}`,
     UPDATE: `${SPACE_API_PATH}/:key`,
-    DESTROY: `${SPACE_API_PATH}/:key`
+    DESTROY: `${SPACE_API_PATH}/:key`,
+
+    SEARCH_MEMBERS: `${SPACE_API_PATH}/:key/${SEARCH_MEMBERS_PATH}`
   },
   PROJECT: {
     GET: `${PROJECT_API_PATH}/:key`,

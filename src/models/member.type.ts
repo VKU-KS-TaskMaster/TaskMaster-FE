@@ -6,26 +6,25 @@ import TaskCode from '@models/task.type'
 
 type MemberEntityCode = ProjectCode | MilestoneCode | TaskCode
 
-interface Member {
+export interface Member {
   code: UserCode
   status: number
   type: number
 }
 
-interface MemberSearch {
+export interface MemberSearch {
   q: string
 }
 
-interface Team {
+export interface Team {
   code: TeamCode
   status: number
   type: number
 }
 
-interface MemberUpdate {
+export interface MemberUpdate {
   members: Array<Member>
   teams: Array<Team>
 }
 
 export default MemberEntityCode
-export { Member, MemberSearch, MemberUpdate, Team }

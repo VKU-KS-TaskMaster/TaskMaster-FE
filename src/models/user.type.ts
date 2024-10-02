@@ -1,6 +1,6 @@
 type UserCode = string
 
-type User = {
+export type User = {
   code: UserCode
 
   avatar: string
@@ -10,4 +10,3 @@ type User = {
 }
 
 export default UserCode
-export { User }
