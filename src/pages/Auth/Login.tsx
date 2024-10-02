@@ -1,17 +1,23 @@
-import { Button, ConfigProvider, Select, Space, Switch } from 'antd'
+import { Fragment } from 'react/jsx-runtime'
+import { useNavigate } from 'react-router-dom'
 import { getIdToken, signInWithPopup } from 'firebase/auth'
+import { Typography, Divider, Form, Input } from 'antd'
 
+import paths from '@constants/paths'
+import colors from '@constants/colors'
 import AuthAPI from '@apis/auth.api'
-import { useAuth } from '@hooks/useAuth'
-import { useTheme } from '@hooks/useTheme'
+import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
+import { useTranslation } from 'react-i18next'
 import { auth, provider } from '@configs/firebase.config'
-import { darkTheme, lightTheme } from '@theme'
+import { GoogleOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
 
-const { Option } = Select
+const { Title } = Typography
 
 function Login() {
-  const [darkMode, toggleTheme] = useTheme()
-  const { user } = useAuth()
+  const navigate = useNavigate()
+  const { t } = useTranslation('auth', {
+    keyPrefix: 'signIn'
+  })
 
   const loginWithGoogle = async () => {
     try {
@@ -31,50 +37,63 @@ function Login() {
   }
 
   return (
-    <ConfigProvider theme={darkMode ? darkTheme : lightTheme}>
-      <div style={{ backgroundColor: darkMode ? 'black' : 'white', minHeight: '100vh', padding: '20px' }}>
-        <Space direction='vertical'>
-          <Switch
-            checked={darkMode}
-            onChange={toggleTheme}
-            checkedChildren='Dark Mode'
-            unCheckedChildren='Light Mode'
-          />
-          <Space>
-            <Button type='primary'>Primary Button</Button>
-            <Button>Default Button</Button>
-            <Button type='dashed'>Dashed Button</Button>
-            <Button type='text'>Text Button</Button>
-            <Button type='link'>Link Button</Button>
-          </Space>
-          <Space>
-            <Select defaultValue='Option1' style={{ width: 120 }}>
-              <Option value='Option1'>Option1</Option>
-              <Option value='Option2'>Option2</Option>
-            </Select>
-            <Select defaultValue='Disabled' style={{ width: 120 }} disabled>
-              <Option value='Disabled'>Disabled</Option>
-            </Select>
-            <Select defaultValue='Loading' style={{ width: 120 }} loading>
-              <Option value='Loading'>Loading</Option>
-            </Select>
-            <Select defaultValue='Clear' style={{ width: 120 }} allowClear>
-              <Option value='Clear'>Clear</Option>
-            </Select>
-          </Space>
-        </Space>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          {user ? (
-            <div>
-              <p>Xin chào: {user.email}</p>
-              <button onClick={logout}>Logout</button>
-            </div>
-          ) : (
-            <button onClick={loginWithGoogle}>Login with google</button>
-          )}
+    <Fragment>
+      <div className='fixed right-5 top-5 flex items-center space-x-2'>
+        <Title level={5} className='text-text-dark mb-0 hidden font-normal md:block'>
+          {t('signUpTitle')}
+        </Title>
+        <Button type={ButtonType.PRIMARY} variant={ButtonVariant.STANDARD} onClick={() => navigate(paths.REGISTER)}>
+          {t('signUpBtn')}
+        </Button>
+      </div>
+      <div className='flex w-full max-w-[440px] items-center justify-center rounded-lg bg-white p-6 shadow-[0_2px_64px_#26214a1a]'>
+        <div className='h-[412px] w-[360px]'>
+          <Title level={3} className='mb-8 text-center uppercase'>
+            {t('title')}
+          </Title>
+          <Button type={ButtonType.PRIMARY} variant={ButtonVariant.GHOST} className='text-text-dark w-full text-center'>
+            <GoogleOutlined className='absolute left-3 mr-2 w-4 text-red-600' />
+            <span className='text-sm font-medium'>{t('googleBtn')}</span>
+          </Button>
+          <Divider className='my-4' style={{ borderColor: colors.BTN.BORDER }}>
+            {t('signInWith')}
+          </Divider>
+
+          <div className='h-[214px] w-full'>
+            <Form layout='vertical'>
+              <Form.Item label={<span className='text-text-dark'>{t('usernameTitle')}</span>} className='mb-4'>
+                <Input
+                  placeholder={t('usernamePlaceholder')}
+                  size='large'
+                  prefix={<MailOutlined className='text-text-weak' />}
+                />
+              </Form.Item>
+              <Form.Item
+                label={<span className='text-text-dark'>{t('password')}</span>}
+                className='text-text-weak mb-4'
+              >
+                <Input.Password
+                  placeholder={t('passwordPlaceholder')}
+                  size='large'
+                  prefix={<LockOutlined className='text-text-weak' />}
+                />
+              </Form.Item>
+            </Form>
+
+            <Button type='link' className='mb-4 text-left' size='small'>
+              {t('forgotPasswordBtn')}
+            </Button>
+          </div>
+          <Button
+            type={ButtonType.PRIMARY}
+            variant={ButtonVariant.STANDARD}
+            className='w-full py-5 text-center text-lg'
+          >
+            {t('submitBtn')}
+          </Button>
         </div>
       </div>
-    </ConfigProvider>
+    </Fragment>
   )
 }
 
