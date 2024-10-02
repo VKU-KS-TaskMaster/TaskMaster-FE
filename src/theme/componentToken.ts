@@ -24,12 +24,18 @@ export const componentToken = {
     //Light
     popupBg: colors.BG.WEAK,
     subMenuItemBg: colors.BG.WEAK,
+    iconMarginInlineEnd: 10,
 
     itemBg: colors.BG.WEAK,
     itemActiveBg: colors.BG.ACTIVE,
     itemColor: colors.TEXT_WEAK,
     itemHoverBg: colors.BG.ACTIVE,
     itemHoverColor: colors.TEXT,
+    itemSelectedBg: colors.BG.DIVIDER,
+    itemPaddingInline: 10,
+    itemMarginBlock: 6,
+    itemMarginInline: 0,
+    itemHeight: 34,
 
     //Dark
     darkPopupBg: colors.BG.WEAK,

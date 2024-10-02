@@ -9,6 +9,7 @@ const { defaultAlgorithm, darkAlgorithm } = theme
 export const lightTheme = {
   cssVar: true,
   algorithm: defaultAlgorithm,
+  cssVar: true,
   token: {
     ...seedToken,
     ...mapToken,
@@ -20,6 +21,7 @@ export const lightTheme = {
 export const darkTheme = {
   cssVar: true,
   algorithm: darkAlgorithm,
+  cssVar: true,
   token: {
     ...seedToken,
     ...mapToken,
