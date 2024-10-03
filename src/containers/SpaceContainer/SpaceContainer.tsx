@@ -11,6 +11,7 @@ function SpaceContainer({ children }: { children: ReactNode }) {
   useEffect(() => {
     const curMode = darkTheme ? 'dark' : 'light'
     if (themeMode != curMode) dispatch(setThemeMode({ mode: curMode }))
+    if (curMode === 'dark') document.documentElement.classList.add('dark')
   }, [darkTheme])
 
   return children
