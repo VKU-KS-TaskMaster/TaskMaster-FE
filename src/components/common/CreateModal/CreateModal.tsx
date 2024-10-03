@@ -81,7 +81,7 @@ function CreateModal() {
             padding: '0 1.5rem'
           }}
           more={{
-            icon: <EllipsisOutlined className='text-text-weak hover:text-text-light' />
+            icon: <EllipsisOutlined className='hover:text-text-active text-text-weak' />
           }}
         />
       }

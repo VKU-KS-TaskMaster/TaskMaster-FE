@@ -16,6 +16,7 @@ import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import ProjectList from '@components/micro/Sidebar/ProjectList'
 import TopWorkspaceLabel from '@components/micro/Sidebar/TopWorkSpaceLabel'
 import colors from '@constants/colors'
+import { useAppSelector } from '@features/hook'
 import type { MenuProps } from 'antd'
 import { Avatar, ConfigProvider, Divider, Dropdown, Input, Menu } from 'antd'
 import React, { useState } from 'react'
@@ -66,13 +67,14 @@ const TOP_ITEMS: MenuProps['items'] = [
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
 // Main Component
 const Sidebar: React.FC = () => {
+  const themeMode = useAppSelector((state) => state.theme.mode)
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
 
   return (
-    <div className='text-text-weak flex h-full w-56 flex-col overflow-hidden bg-navigation-headerBg'>
-      <div className='gap-4 border-b border-borderBottom p-2'>
+    <div className='bg-bg-navigationSidebar flex h-full w-56 flex-col overflow-hidden text-text-weak'>
+      <div className='border-border-bottom gap-4 border-b p-2'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
           trigger={['click']}
@@ -87,9 +89,9 @@ const Sidebar: React.FC = () => {
         </Dropdown>
       </div>
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
-      <Divider type='horizontal' variant='solid' className='my-2 bg-borderBottom' />
+      <Divider type='horizontal' variant='solid' className='bg-border-bottom my-2' />
       <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
-        <div className='text-text-light flex items-center justify-between font-bold'>
+        <div className='text-text-active flex items-center justify-between font-bold'>
           {isSearch ? (
             <>
               <Button
@@ -103,8 +105,8 @@ const Sidebar: React.FC = () => {
                 theme={{
                   token: {
                     lineWidth: 0,
-                    colorText: colors.TEXT,
-                    colorTextPlaceholder: colors.TEXT_WEAK
+                    colorText: colors[themeMode].TEXT.ACTIVE,
+                    colorTextPlaceholder: colors[themeMode].TEXT.WEAK
                   }
                 }}
               >
@@ -117,7 +119,7 @@ const Sidebar: React.FC = () => {
                   onBlur={() => searchValue === '' && setIsSearch(false)}
                   suffix={
                     <Button
-                      icon={<CloseIcon className='text-text-weak text-[12px]' />}
+                      icon={<CloseIcon className='text-[12px] text-text-weak' />}
                       size='small'
                       onClick={() => setSearchValue('')}
                     />
@@ -141,7 +143,7 @@ const Sidebar: React.FC = () => {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='text-text-weak hover:text-text-light justify-start p-0'
+          className='hover:text-text-active justify-start p-0 text-text-weak'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<ProjectBoardIcon />}
@@ -150,7 +152,7 @@ const Sidebar: React.FC = () => {
           <span className='text-sm'>{t('projectListBtn')}</span>
         </Button>
         <Button
-          className='text-text-weak hover:text-text-light justify-start p-0'
+          className='hover:text-text-active justify-start p-0 text-text-weak'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<PlusOutlined />}
@@ -160,9 +162,9 @@ const Sidebar: React.FC = () => {
         </Button>
       </div>
 
-      <div className='flex items-center justify-between border-t border-borderBottom px-2 py-2'>
+      <div className='border-border-bottom flex items-center justify-between border-t px-2 py-2'>
         <Button icon={<AssignMemberIcon />}>{t('inviteBtn')}</Button>
-        <div className='h-[22px] w-px bg-borderBottom' />
+        <div className='bg-border-bottom h-[22px] w-px' />
         <Button icon={<HelpIcon />}>{t('helpBtn')}</Button>
       </div>
     </div>

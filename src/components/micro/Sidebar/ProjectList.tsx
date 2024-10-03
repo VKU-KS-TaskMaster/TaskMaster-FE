@@ -5,7 +5,7 @@ import { cn } from '@utils/base'
 const ProjectItem = ({ title }: { title: string }) => {
   return (
     <Button
-      className='text-text-weak hover:text-text-light justify-start'
+      className='hover:text-text-active justify-start text-text-weak'
       variant={ButtonVariant.SQUARE}
       type={ButtonType.PRIMARY}
       icon={<ProjectBoardIcon />}

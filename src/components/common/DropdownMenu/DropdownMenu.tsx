@@ -56,7 +56,7 @@ function DropdownMenu({ menus, t, children, dropdownProps, menuProps, menuItemPr
           key={item.key}
           icon={item.icon}
           title={t(item.title)}
-          className='text-text-weak hover:text-text-light mx-1 rounded-md hover:bg-bg-active'
+          className='hover:text-text-active mx-1 rounded-md text-text-weak hover:bg-bg-active'
           onClick={() => item.onClick?.(item)}
           {...menuItemProps}
         >

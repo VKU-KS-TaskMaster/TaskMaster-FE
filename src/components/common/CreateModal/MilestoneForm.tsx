@@ -20,7 +20,7 @@ function ProjectTaskForm() {
       name='basic'
       layout='vertical'
       autoComplete='off'
-      className='border-b-[1px] border-borderBottom p-6'
+      className='border-border-bottom border-b-[1px] p-6'
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -32,7 +32,7 @@ function ProjectTaskForm() {
       >
         <Input
           placeholder=''
-          className='text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
+          className='border-border-bottom focus:border-text text-text-active rounded-sm border-0 border-b-[1px] bg-bg-inputModal px-3 py-1 outline-none focus:outline-0 focus:ring-0'
         />
       </Form.Item>
 

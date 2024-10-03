@@ -1,5 +1,5 @@
 function Space() {
-  return <div className='h-full bg-navigation-contentBg'></div>
+  return <div className='bg-bg-navigationContent h-full'></div>
 }
 
 export default Space

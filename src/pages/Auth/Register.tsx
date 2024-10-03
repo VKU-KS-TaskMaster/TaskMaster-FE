@@ -5,12 +5,14 @@ import { useTranslation } from 'react-i18next'
 import paths from '@constants/paths'
 import colors from '@constants/colors'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
+import { useAppSelector } from '@features/hook'
 import { Divider, Form, Input, Typography } from 'antd'
 import { GoogleOutlined, LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 
 const { Title } = Typography
 
 function Register() {
+  const themeMode = useAppSelector((state) => state.theme.mode)
   const navigate = useNavigate()
   const { t } = useTranslation('auth', {
     keyPrefix: 'signUp'
@@ -19,7 +21,7 @@ function Register() {
   return (
     <Fragment>
       <div className='fixed right-5 top-5 flex items-center space-x-2'>
-        <Title level={5} className='text-text-dark mb-0 hidden font-normal md:block'>
+        <Title level={5} className='text-text-active mb-0 hidden font-normal md:block'>
           {t('signInTitle')}
         </Title>
         <Button type={ButtonType.PRIMARY} variant={ButtonVariant.STANDARD} onClick={() => navigate(paths.LOGIN)}>
@@ -70,10 +72,14 @@ function Register() {
           >
             {t('submitBtn')}
           </Button>
-          <Divider className='m-0' style={{ borderColor: colors.BTN.BORDER }}>
+          <Divider className='m-0' style={{ borderColor: colors[themeMode].BORDER.BTN }}>
             {t('signUpWith')}
           </Divider>
-          <Button type={ButtonType.PRIMARY} variant={ButtonVariant.GHOST} className='text-text-dark w-full text-center'>
+          <Button
+            type={ButtonType.PRIMARY}
+            variant={ButtonVariant.GHOST}
+            className='text-text-active w-full text-center'
+          >
             <GoogleOutlined className='absolute left-3 mr-2 w-4 text-red-600' />
             <span className='text-sm font-medium'>{t('googleBtn')}</span>
           </Button>
