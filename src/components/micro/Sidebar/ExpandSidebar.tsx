@@ -16,6 +16,7 @@ import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import ProjectList from '@components/micro/Sidebar/ProjectList'
 import TopWorkspaceLabel from '@components/micro/Sidebar/TopWorkSpaceLabel'
 import colors from '@constants/colors'
+import { useAppSelector } from '@features/hook'
 import type { MenuProps } from 'antd'
 import { Avatar, ConfigProvider, Divider, Dropdown, Input, Menu } from 'antd'
 import { useState } from 'react'
@@ -64,14 +65,15 @@ const TOP_ITEMS: MenuProps['items'] = [
 ]
 
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
-
-export default function ExpandSidebar() {
+// Main Component
+const ExpandSidebar: React.FC = () => {
+  const themeMode = useAppSelector((state) => state.theme.mode)
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
   return (
-    <>
-      <div className='gap-4 border-b border-borderBottom p-2'>
+    <div className='flex h-full w-56 flex-col overflow-hidden bg-bg-navigationSidebar text-text-weak'>
+      <div className='gap-4 border-b border-border-bottom p-2'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
           trigger={['click']}
@@ -86,9 +88,9 @@ export default function ExpandSidebar() {
         </Dropdown>
       </div>
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
-      <Divider type='horizontal' variant='solid' className='my-2 bg-borderBottom' />
-      <div className='flex flex-1 flex-col gap-2 overflow-hidden px-[10px] py-[6px]'>
-        <div className='flex items-center justify-between font-bold text-text-light'>
+      <Divider type='horizontal' variant='solid' className='my-2 bg-border-bottom' />
+      <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
+        <div className='flex items-center justify-between font-bold text-text-active'>
           {isSearch ? (
             <>
               <Button
@@ -102,8 +104,8 @@ export default function ExpandSidebar() {
                 theme={{
                   token: {
                     lineWidth: 0,
-                    colorText: colors.TEXT.LIGHT,
-                    colorTextPlaceholder: colors.TEXT.WEAK
+                    colorText: colors[themeMode].TEXT.ACTIVE,
+                    colorTextPlaceholder: colors[themeMode].TEXT.WEAK
                   }
                 }}
               >
@@ -140,7 +142,7 @@ export default function ExpandSidebar() {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='justify-start p-0 text-text-weak hover:text-text-light'
+          className='justify-start p-0 text-text-weak hover:text-text-active'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<ProjectBoardIcon />}
@@ -149,7 +151,7 @@ export default function ExpandSidebar() {
           <span className='text-sm'>{t('projectListBtn')}</span>
         </Button>
         <Button
-          className='justify-start p-0 text-text-weak hover:text-text-light'
+          className='justify-start p-0 text-text-weak hover:text-text-active'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<PlusOutlined />}
@@ -159,11 +161,13 @@ export default function ExpandSidebar() {
         </Button>
       </div>
 
-      <div className='flex items-center justify-between border-t border-borderBottom px-2 py-2'>
+      <div className='flex items-center justify-between border-t border-border-bottom px-2 py-2'>
         <Button icon={<AssignMemberIcon />}>{t('inviteBtn')}</Button>
-        <div className='h-[22px] w-px bg-borderBottom' />
+        <div className='h-[22px] w-px bg-border-bottom' />
         <Button icon={<HelpIcon />}>{t('helpBtn')}</Button>
       </div>
-    </>
+    </div>
   )
 }
+
+export default ExpandSidebar

@@ -1,5 +1,5 @@
-import Content from '@components/micro/Main/Content'
-import Header from '@components/micro/Main/Header'
+import { Content, Header } from '@components/micro/Auth'
+import SpaceContainer from '@containers/SpaceContainer'
 import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
@@ -8,11 +8,11 @@ function MainLayout() {
 
   return (
     <div>
-      <Header isCollapsed setIsCollapsed={setIsCollapsed} />
+      <Header isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       <Content isCollapsed={isCollapsed}>
         <Outlet />
       </Content>
-    </div>
+    </SpaceContainer>
   )
 }
 

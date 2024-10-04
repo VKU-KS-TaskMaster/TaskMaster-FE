@@ -1,98 +1,99 @@
 import colors from '@constants/colors'
 
-export const componentToken = {
-  Button: {
-    borderRadius: 6,
-    textTextColor: colors.TEXT.LIGHT
-  },
-  Tabs: {
-    //Dark
-    itemColor: colors.TEXT.WEAK,
-    itemHoverColor: colors.TEXT.LIGHT,
-    itemActiveColor: colors.TEXT.LIGHT,
-    itemSelectedColor: colors.TEXT.LIGHT,
-    inkBarColor: colors.TEXT.LIGHT
-  },
-  Dropdown: {
-    colorText: colors.TEXT.WEAK,
-    colorTextDescription: colors.TEXT.LIGHT,
-    colorBgElevated: colors.BG.WEAK,
-    controlItemBgHover: colors.BG.ACTIVE,
-    colorSplit: colors.BG.DIVIDER
-  },
-  Menu: {
-    //Light
-    popupBg: colors.BG.WEAK,
-    subMenuItemBg: colors.BG.WEAK,
-    iconMarginInlineEnd: 10,
+export const componentToken = (mode: 'dark' | 'light') => {
+  return {
+    Button: {
+      borderRadius: 6,
+      textTextColor: colors[mode].TEXT.ACTIVE
+    },
+    Tabs: {
+      //Dark
+      itemColor: colors[mode].TEXT.WEAK,
+      itemHoverColor: colors[mode].TEXT.ACTIVE,
+      itemActiveColor: colors[mode].TEXT.ACTIVE,
+      itemSelectedColor: colors[mode].TEXT.ACTIVE,
+      inkBarColor: colors[mode].TEXT.ACTIVE
+    },
+    Dropdown: {
+      colorText: colors[mode].TEXT.WEAK,
+      colorTextDescription: colors[mode].TEXT.ACTIVE,
+      colorBgElevated: colors[mode].BG.WEAK,
+      controlItemBgHover: colors[mode].BG.ACTIVE,
+      colorSplit: colors[mode].BG.DIVIDER
+    },
+    Menu: {
+      //Light
+      // popupBg: colors[mode].BG.WEAK,
+      // subMenuItemBg: colors[mode].BG.WEAK,
+      // iconMarginInlineEnd: 10,
 
-    itemBg: colors.BG.WEAK,
-    itemActiveBg: colors.BG.ACTIVE,
-    itemColor: colors.TEXT.WEAK,
-    itemHoverBg: colors.BG.ACTIVE,
-    itemHoverColor: colors.TEXT.LIGHT,
-    itemSelectedColor: colors.TEXT.LIGHT,
-    itemSelectedBg: colors.BG.ACTIVE,
-    itemPaddingInline: 10,
-    itemMarginBlock: 6,
-    itemMarginInline: 0,
-    itemHeight: 34,
+      // itemBg: colors[mode].BG.WEAK,
+      // itemActiveBg: colors[mode].BG.ACTIVE,
+      // itemColor: colors[mode].TEXT.WEAK,
+      // itemHoverBg: colors[mode].BG.ACTIVE,
+      // itemHoverColor: colors[mode].TEXT.ACTIVE,
+      // itemSelectedBg: colors[mode].BG.DIVIDER,
+      // itemPaddingInline: 10,
+      // itemMarginBlock: 6,
+      // itemMarginInline: 0,
+      // itemHeight: 34,
 
-    //Dark
-    darkPopupBg: colors.BG.WEAK,
-    darkSubMenuItemBg: colors.BG.WEAK,
+      //Dark
+      darkPopupBg: colors[mode].BG.WEAK,
+      darkSubMenuItemBg: colors[mode].BG.WEAK,
 
-    darkItemBg: colors.BG.WEAK,
-    darkItemActiveBg: colors.BG.ACTIVE,
-    darkItemColor: colors.TEXT.WEAK,
-    darkItemHoverBg: colors.BG.ACTIVE,
-    darkItemHoverColor: colors.TEXT.LIGHT
-  },
-  Modal: {
-    //Dark
-    headerBg: colors.NAVIGATION.SIDEBAR_BG,
-    contentBg: colors.NAVIGATION.SIDEBAR_BG,
-    footerBg: colors.BG.INPUT_MODAL,
-    titleColor: colors.TEXT.LIGHT,
-    colorText: colors.TEXT.WEAK
-  },
-  Notification: {
-    //Dark
-    colorBgElevated: colors.BG.WEAK,
-    colorIcon: colors.ICON.WEAK,
-    colorIconHover: colors.ICON.ACTIVE,
-    colorTextHeading: colors.TEXT.LIGHT,
-    colorText: colors.TEXT.WEAK
-  },
-  Form: {
-    labelColor: colors.TEXT.WEAK
-  },
-  Input: {
-    //Dark
-    colorIcon: colors.ICON.WEAK,
-    colorIconHover: colors.ICON.ACTIVE
-  },
-  Select: {
-    selectorBg: colors.BG.INPUT_MODAL,
-    optionActiveBg: colors.BG.ACTIVE,
-    optionSelectedBg: colors.BG.ACTIVE,
-    optionSelectedColor: colors.TEXT.LIGHT,
-    colorText: colors.TEXT.WEAK,
+      darkItemBg: colors[mode].BG.WEAK,
+      darkItemActiveBg: colors[mode].BG.ACTIVE,
+      darkItemColor: colors[mode].TEXT.WEAK,
+      darkItemHoverBg: colors[mode].BG.ACTIVE,
+      darkItemHoverColor: colors[mode].TEXT.ACTIVE
+    },
+    Modal: {
+      //Dark
+      headerBg: colors[mode].BG.NAVIGATION_SIDEBAR,
+      contentBg: colors[mode].BG.NAVIGATION_SIDEBAR,
+      footerBg: colors[mode].BG.INPUT_MODAL,
+      titleColor: colors[mode].TEXT.ACTIVE,
+      colorText: colors[mode].TEXT.WEAK
+    },
+    Notification: {
+      //Dark
+      colorBgElevated: colors[mode].BG.WEAK,
+      colorIcon: colors[mode].ICON.WEAK,
+      colorIconHover: colors[mode].ICON.ACTIVE,
+      colorTextHeading: colors[mode].TEXT.ACTIVE,
+      colorText: colors[mode].TEXT.WEAK
+    },
+    Form: {
+      labelColor: colors[mode].TEXT.WEAK
+    },
+    Input: {
+      //Dark
+      colorIcon: colors[mode].ICON.WEAK,
+      colorIconHover: colors[mode].ICON.ACTIVE
+    },
+    Select: {
+      selectorBg: colors[mode].BG.INPUT_MODAL,
+      optionActiveBg: colors[mode].BG.ACTIVE,
+      optionSelectedBg: colors[mode].BG.ACTIVE,
+      optionSelectedColor: colors[mode].TEXT.ACTIVE,
+      colorText: colors[mode].TEXT.WEAK,
 
-    colorBorder: colors.BG.INPUT_MODAL,
-    colorPrimary: colors.BG.INPUT_MODAL,
-    colorPrimaryHover: colors.BG.INPUT_MODAL,
-    colorTextPlaceholder: colors.TEXT.WEAK,
-    colorTextQuaternary: colors.TEXT.WEAK,
-    colorBgElevated: colors.BG.WEAK,
-    borderRadius: 0,
-    controlOutlineWidth: 0
-  },
-  DatePicker: {
-    colorBorder: colors.BG.INPUT_MODAL,
-    colorTextPlaceholder: colors.TEXT.WEAK,
-    colorTextDisabled: colors.TEXT.WEAK,
-    colorTextDescription: colors.ICON.ACTIVE,
-    controlOutlineWidth: 0
+      colorBorder: colors[mode].BG.INPUT_MODAL,
+      colorPrimary: colors[mode].BG.INPUT_MODAL,
+      colorPrimaryHover: colors[mode].BG.INPUT_MODAL,
+      colorTextPlaceholder: colors[mode].TEXT.WEAK,
+      colorTextQuaternary: colors[mode].TEXT.WEAK,
+      colorBgElevated: colors[mode].BG.WEAK,
+      borderRadius: 0,
+      controlOutlineWidth: 0
+    },
+    DatePicker: {
+      colorBorder: colors[mode].BG.INPUT_MODAL,
+      colorTextPlaceholder: colors[mode].TEXT.WEAK,
+      colorTextDisabled: colors[mode].TEXT.WEAK,
+      colorTextDescription: colors[mode].ICON.ACTIVE,
+      controlOutlineWidth: 0
+    }
   }
 }

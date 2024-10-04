@@ -220,7 +220,7 @@ function ProjectForm() {
               components={{
                 entityLink: (
                   <Link
-                    className='text-text-light underline'
+                    className='text-text-active underline'
                     to={paths.PROJECT_DETAIL.replace(':projectCode', data.code)}
                   />
                 )
@@ -247,7 +247,7 @@ function ProjectForm() {
   return (
     <Fragment>
       <Form name='basic' layout='vertical' autoComplete='off' initialValues={{ remember: true }} form={form}>
-        <div className='border-b-[1px] border-borderBottom p-6'>
+        <div className='border-border-bottom border-b-[1px] p-6'>
           <Form.Item<FieldType>
             label={tModal(FORM_ITEMS.name.label)}
             rules={FORM_ITEMS.name.rules}
@@ -255,7 +255,7 @@ function ProjectForm() {
           >
             <Input
               placeholder={tModal(FORM_ITEMS.name?.placeholder)}
-              className='placeholder:text-text-weak text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
+              className='border-border-bottom focus:border-text text-text-active rounded-sm border-0 border-b-[1px] bg-bg-inputModal px-3 py-1 outline-none placeholder:text-text-weak focus:outline-0 focus:ring-0'
             />
           </Form.Item>
           <Form.Item<FieldType>
@@ -266,7 +266,7 @@ function ProjectForm() {
             <Input.TextArea
               rows={3}
               placeholder={tModal(FORM_ITEMS.description?.placeholder)}
-              className='placeholder:text-text-weak text-text-light rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1 outline-none focus:border-text focus:outline-0 focus:ring-0'
+              className='border-border-bottom focus:border-text text-text-active rounded-sm border-0 border-b-[1px] bg-bg-inputModal px-3 py-1 outline-none placeholder:text-text-weak focus:outline-0 focus:ring-0'
             />
           </Form.Item>
           <div className='flex gap-3'>
@@ -285,7 +285,7 @@ function ProjectForm() {
                 })}
                 defaultValue={FORM_ITEMS.status.default}
                 rootClassName='bg-bg-weak'
-                className='rounded-sm border-0 border-b-[1px] border-borderBottom'
+                className='border-border-bottom rounded-sm border-0 border-b-[1px]'
               />
             </Form.Item>
             <Form.Item<FieldType>
@@ -303,7 +303,7 @@ function ProjectForm() {
                 })}
                 defaultValue={FORM_ITEMS.currency.default}
                 rootClassName='bg-bg-weak'
-                className='rounded-sm border-0 border-b-[1px] border-borderBottom'
+                className='border-border-bottom rounded-sm border-0 border-b-[1px]'
               />
             </Form.Item>
           </div>
@@ -318,7 +318,7 @@ function ProjectForm() {
                 format={dateFormat}
                 type={FORM_ITEMS.begin_date.type}
                 defaultValue={dayjs(new Date())}
-                className='text-text-weak hover:text-text-light w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1'
+                className='border-border-bottom hover:text-text-active w-full rounded-sm border-0 border-b-[1px] bg-bg-inputModal px-3 py-1 text-text-weak'
               />
             </Form.Item>
             <Form.Item<FieldType>
@@ -331,7 +331,7 @@ function ProjectForm() {
                 format={dateFormat}
                 type={FORM_ITEMS.due_date.type}
                 defaultValue={dayjs(new Date())}
-                className='text-text-weak hover:text-text-light w-full rounded-sm border-0 border-b-[1px] border-borderBottom bg-bg-inputModal px-3 py-1'
+                className='border-border-bottom hover:text-text-active w-full rounded-sm border-0 border-b-[1px] bg-bg-inputModal px-3 py-1 text-text-weak'
               />
             </Form.Item>
           </div>
@@ -347,7 +347,7 @@ function ProjectForm() {
                 options={memberOptions}
                 onSearch={handleSearchMembers}
                 rootClassName='bg-bg-weak'
-                className='rounded-sm border-0 border-b-[1px] border-borderBottom'
+                className='rounded-sm border-0 border-b-[1px] border-border-bottom'
               /> */}
               <DebounceSelect
                 mode='multiple'
@@ -357,7 +357,7 @@ function ProjectForm() {
                 onChange={(newValue) => {
                   setMemberOptions(newValue as OptionValue[])
                 }}
-                className='rounded-sm border-0 border-b-[1px] border-borderBottom'
+                className='border-border-bottom rounded-sm border-0 border-b-[1px]'
               />
             </Form.Item>
             <Form.Item<FieldType>
@@ -374,7 +374,7 @@ function ProjectForm() {
                 onChange={(newValue) => {
                   setMemberOptions(newValue as OptionValue[])
                 }}
-                className='rounded-sm border-0 border-b-[1px] border-borderBottom'
+                className='border-border-bottom rounded-sm border-0 border-b-[1px]'
               />
             </Form.Item>
           </div>

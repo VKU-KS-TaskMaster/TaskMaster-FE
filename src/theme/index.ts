@@ -14,7 +14,7 @@ export const lightTheme = {
     ...mapToken,
     ...aliasToken
   },
-  components: componentToken
+  components: componentToken('light')
 }
 
 export const darkTheme = {
@@ -25,7 +25,11 @@ export const darkTheme = {
     ...mapToken,
     ...aliasToken
   },
-  components: componentToken
+  components: componentToken('dark')
 }
+
+console.log('====================================')
+console.log(componentToken('dark'))
+console.log('====================================')
 
 export { aliasToken, componentToken, mapToken, seedToken }

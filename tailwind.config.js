@@ -3,52 +3,85 @@ const plugin = require('tailwindcss/plugin')
 export default {
   important: true,
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {
-        navigation: {
-          text: 'rgba(254, 254, 255, 0.8)',
-          headerBg: 'rgba(46, 46, 48, 1)',
-          sidebarBg: 'rgba(46, 46, 48, 1)',
-          contentBg: 'rgba(37, 38, 40, 1)'
-        },
-
-        btn: {
-          bgHover: 'rgba(255, 255, 255, 0.1)',
-          bgActive: 'rgba(255, 255, 255, 0.2)',
-          lightBgHover: 'rgba(245, 243, 243, 1)',
-          lightBgActive: 'rgba(55,23,23,.08)',
-          border: 'rgba(106, 105, 106, 0.5)',
-          borderHover: 'rgba(106, 105, 106, 1)',
-          lightBorderHover: 'rgba(106, 105, 106, 1)',
-          lightBorderActive: 'rgba(109, 110, 111, 1)'
-        },
-
         bg: {
+          navigationHeader: 'rgba(46, 46, 48, 1)',
+          navigationSidebar: 'rgba(46, 46, 48, 1)',
+          navigationContent: 'rgba(37, 38, 40, 1)',
+          btnHover: 'rgba(255, 255, 255, 0.1)',
+          btnActive: 'rgba(255, 255, 255, 0.2)',
           inputModal: 'rgba(37, 38, 40, 1)',
           success: 'rgba(29, 55, 51, 1)',
           mess: 'rgba(173, 104, 0, 1)',
           weak: 'rgba(30, 31, 33, 1)',
           active: 'rgba(255, 255, 255, 0.11)',
           card: 'rgba(42, 43, 45, 1)',
-          divider: 'rgb(60, 65, 74, 1)'
+          divider: 'rgb(60, 65, 74, 1)',
+          itemHover: 'rgba(43, 44, 46, 0.5)'
         },
-
-        divider: 'rgba(0, 0, 0, 0.06)',
-        icon: 'rgba(162, 160, 162, 0.85)',
-        iconActive: 'rgba(255, 255, 255, 1)',
-        borderBottom: 'rgba(66, 66, 68, 1)',
         text: {
+          navigation: 'rgba(254, 254, 255, 0.8)',
           weak: 'rgba(162, 160, 162, 1)',
-          dark: 'rgba(30, 31, 33, 1)',
-          light: 'rgba(245, 244, 243, 1)'
+          active: 'rgba(245, 244, 243, 1)',
+          disabled: '#AFABAC'
         },
-        iconSuccess: 'rgba(93, 162, 131, 1)',
+        border: {
+          bottom: 'rgba(66, 66, 68, 1)',
+          btn: 'rgba(106, 105, 106, 0.5)',
+          btnHover: 'rgba(106, 105, 106, 1)'
+        },
+        icon: {
+          weak: 'rgba(162, 160, 162, 0.85)',
+          active: 'rgba(255, 255, 255, 1)',
+          success: 'rgba(93, 162, 131, 1)',
+          successHover: '#368E6A',
+          disabled: '#AFABAC'
+        },
+        primary1: 'rgba(230, 247, 255, 1)',
+        primary6: 'rgba(24, 144, 255, 1)',
 
-        projectItemHover: 'rgba(43, 44, 46, 0.5)',
+        //Light mode
+        light: {
+          bg: {
+            navigationHeader: '#F9F8F8',
+            navigationSidebar: '#F9F8F8',
+            navigationContent: '#FFFFFF',
+            btnHover: '#F5F3F3',
+            btnActive: '#371717',
+            inputModal: '#F9F8F8',
+            success: 'rgba(29, 55, 51, 1)',
+            mess: 'rgba(173, 104, 0, 1)',
+            weak: '#FFFFFF',
+            active: '#FFFFFF',
+            card: '#FFFFFF',
+            divider: '#EDEAE9',
+            itemHover: '#371717'
+          },
+          text: {
+            navigation: '#1E1F21',
+            weak: '#6D6E6F',
+            active: '#1E1F21',
+            disabled: '#AFABAC'
+          },
+          border: {
+            bottom: '#EDEAE9',
+            btn: '#CFCBCB',
+            btnHover: '#AFABAC'
+          },
+          icon: {
+            weak: '#6D6E6F',
+            active: '#1E1F21',
+            success: 'rgba(93, 162, 131, 1)',
+            successHover: '#368E6A',
+            disabled: '#AFABAC'
+          },
 
-        'primary-1': 'rgba(230, 247, 255, 1)',
-        'primary-6': 'rgba(24, 144, 255, 1)'
+          primary1: 'rgba(230, 247, 255, 1)',
+          primary6: 'rgba(24, 144, 255, 1)'
+        }
       }
     }
   },

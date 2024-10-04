@@ -1,4 +1,4 @@
-import { useAppDispatch } from '@features/hook'
+import { useAppDispatch, useAppSelector } from '@features/hook'
 import { setCreateModal } from '@features/slices/base'
 import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 import { ReactNode } from 'react'
@@ -170,6 +170,7 @@ const Header: React.FC<{
   isCollapsed: boolean
   setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
 }> = ({ isCollapsed, setIsCollapsed }) => {
+  const themeMode = useAppSelector((state) => state.theme.mode)
   const dispatch = useAppDispatch()
   const { t } = useTranslation(['cms'], {
     keyPrefix: 'layout.header'
@@ -183,7 +184,7 @@ const Header: React.FC<{
   return (
     <div
       className={cn(
-        'grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-borderBottom bg-navigation-headerBg px-5 py-2',
+        'grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-border-bottom bg-bg-navigationHeader px-5 py-2',
         'h-[var(--header-height)]'
       )}
     >
@@ -220,7 +221,12 @@ const Header: React.FC<{
         <Button variant={ButtonVariant.STANDARD} type={ButtonType.PRIMARY} icon={<UpgradeIcon />}>
           {t('upgradeBtn')}
         </Button>
-        <Divider variant='solid' type='vertical' className='m-0 h-6' style={{ borderColor: colors.BG.DIVIDER }} />
+        <Divider
+          variant='solid'
+          type='vertical'
+          className='m-0 h-6'
+          style={{ borderColor: colors[themeMode].BG.DIVIDER }}
+        />
         {MENU_BUTTON.map((d) => (
           <Tooltip key={d.key} placement={d.tooltip.placement} title={t(`${d.tooltip.title}`)}>
             <Button variant={d.varient} type={d.type} icon={d.icon} />

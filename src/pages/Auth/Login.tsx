@@ -10,11 +10,13 @@ import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import { useTranslation } from 'react-i18next'
 import { auth, provider } from '@configs/firebase.config'
 import { GoogleOutlined, LockOutlined, MailOutlined } from '@ant-design/icons'
+import { useAppSelector } from '@features/hook'
 
 const { Title } = Typography
 
 function Login() {
   const navigate = useNavigate()
+  const themeMode = useAppSelector((state) => state.theme.mode)
   const { t } = useTranslation('auth', {
     keyPrefix: 'signIn'
   })
@@ -39,7 +41,7 @@ function Login() {
   return (
     <Fragment>
       <div className='fixed right-5 top-5 flex items-center space-x-2'>
-        <Title level={5} className='text-text-dark mb-0 hidden font-normal md:block'>
+        <Title level={5} className='text-text-active mb-0 hidden font-normal md:block'>
           {t('signUpTitle')}
         </Title>
         <Button type={ButtonType.PRIMARY} variant={ButtonVariant.STANDARD} onClick={() => navigate(paths.REGISTER)}>
@@ -51,17 +53,21 @@ function Login() {
           <Title level={3} className='mb-8 text-center uppercase'>
             {t('title')}
           </Title>
-          <Button type={ButtonType.PRIMARY} variant={ButtonVariant.GHOST} className='text-text-dark w-full text-center'>
+          <Button
+            type={ButtonType.PRIMARY}
+            variant={ButtonVariant.GHOST}
+            className='text-text-active w-full text-center'
+          >
             <GoogleOutlined className='absolute left-3 mr-2 w-4 text-red-600' />
             <span className='text-sm font-medium'>{t('googleBtn')}</span>
           </Button>
-          <Divider className='my-4' style={{ borderColor: colors.BTN.BORDER }}>
+          <Divider className='my-4' style={{ borderColor: colors[themeMode].BORDER.BTN }}>
             {t('signInWith')}
           </Divider>
 
           <div className='h-[214px] w-full'>
             <Form layout='vertical'>
-              <Form.Item label={<span className='text-text-dark'>{t('usernameTitle')}</span>} className='mb-4'>
+              <Form.Item label={<span className='text-text-active'>{t('usernameTitle')}</span>} className='mb-4'>
                 <Input
                   placeholder={t('usernamePlaceholder')}
                   size='large'
@@ -69,8 +75,8 @@ function Login() {
                 />
               </Form.Item>
               <Form.Item
-                label={<span className='text-text-dark'>{t('password')}</span>}
-                className='text-text-weak mb-4'
+                label={<span className='text-text-active'>{t('password')}</span>}
+                className='mb-4 text-text-weak'
               >
                 <Input.Password
                   placeholder={t('passwordPlaceholder')}
