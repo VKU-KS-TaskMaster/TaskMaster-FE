@@ -166,10 +166,7 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
   }
 ]
 
-const Header: React.FC<{
-  isCollapsed: boolean
-  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
-}> = ({ isCollapsed, setIsCollapsed }) => {
+const Header: React.FC<{}> = () => {
   const themeMode = useAppSelector((state) => state.theme.mode)
   const dispatch = useAppDispatch()
   const { t } = useTranslation(['cms'], {
@@ -189,13 +186,6 @@ const Header: React.FC<{
       )}
     >
       <div className='col-span-4 flex flex-row gap-6'>
-        <Button
-          onClick={() => setIsCollapsed((prev) => !prev)}
-          variant={ButtonVariant.SQUARE}
-          type={ButtonType.PRIMARY}
-          icon={isCollapsed ? <OpenSidebarIcon width={20} height={20} /> : <CloseSidebarIcon width={20} height={20} />}
-          className='ml-[-12px]'
-        />
         <Dropdown
           menu={{
             items: MENU_CREATE_ITEMS,

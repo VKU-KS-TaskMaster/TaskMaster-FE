@@ -1,4 +1,12 @@
-import { DownOutlined, FileOutlined, PlusOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
+import {
+  DownOutlined,
+  FileOutlined,
+  LeftOutlined,
+  PlusOutlined,
+  PushpinOutlined,
+  SettingOutlined,
+  UserOutlined
+} from '@ant-design/icons'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
 import {
   AssignMemberIcon,
@@ -42,41 +50,74 @@ const MENU_WORKSPACE: MenuProps['items'] = [
 const TOP_ITEMS: MenuProps['items'] = [
   {
     key: '1',
-    icon: <HomeIcon />,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='homeBtn' />
+    label: (
+      <MenuLabelTranslItem
+        icon={<HomeIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='homeBtn'
+      />
+    )
   },
   {
     key: '2',
-    icon: <InboxIcon />,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='inboxBtn' />
+    label: (
+      <MenuLabelTranslItem
+        icon={<InboxIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='inboxBtn'
+      />
+    )
   },
   {
     key: '3',
-    icon: <FileOutlined />,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='docsBtn' />
+    label: (
+      <MenuLabelTranslItem
+        icon={<FileOutlined className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='docsBtn'
+      />
+    )
   },
   {
     key: '4',
-    icon: <DashboardIcon />,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='dashboardBtn' />
+    label: (
+      <MenuLabelTranslItem
+        icon={<DashboardIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='dashboardBtn'
+      />
+    )
   },
   {
     key: '5',
-    icon: <MoreActionIcon />,
-    label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='moreBtn' />
+    label: (
+      <MenuLabelTranslItem
+        icon={<MoreActionIcon className='mr-2' />}
+        ns={TRANSL_CONFIG.ns}
+        prefix={TRANSL_CONFIG.prefix}
+        i18nKey='moreBtn'
+      />
+    )
   }
 ]
 
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
 // Main Component
-const ExpandSidebar: React.FC = () => {
+const ExpandedSidebar: React.FC<{
+  isCollapsed: boolean
+  handleCollapse: () => void
+}> = ({ isCollapsed, handleCollapse }) => {
   const themeMode = useAppSelector((state) => state.theme.mode)
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
   return (
     <div className='flex h-full w-56 flex-col overflow-hidden bg-light-bg-navigationSidebar text-light-text-weak dark:bg-bg-navigationSidebar dark:text-text-weak'>
-      <div className='gap-4 border-b border-light-border-bottom p-2 dark:border-border-bottom'>
+      <div className='flex justify-between border-b border-light-border-bottom p-2 dark:border-border-bottom'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
           trigger={['click']}
@@ -94,10 +135,17 @@ const ExpandSidebar: React.FC = () => {
             <DownOutlined size={10} />
           </Button>
         </Dropdown>
+        <Button
+          onClick={() => handleCollapse()}
+          variant={ButtonVariant.SQUARE}
+          type={ButtonType.PRIMARY}
+          icon={isCollapsed ? <PushpinOutlined size={10} /> : <LeftOutlined className='text-sm' />}
+          className='ml-[-12px]'
+        />
       </div>
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
-      <Divider type='horizontal' variant='solid' className='my-2 bg-light-border-bottom dark:bg-border-bottom' />
-      <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
+      <Divider type='horizontal' variant='solid' className='my-0 bg-light-border-bottom dark:bg-border-bottom' />
+      <div className='flex flex-1 flex-col gap-2 overflow-hidden p-2'>
         <div className='flex items-center justify-between font-bold text-light-text-active dark:text-text-active'>
           {isSearch ? (
             <>
@@ -136,7 +184,7 @@ const ExpandSidebar: React.FC = () => {
             </>
           ) : (
             <>
-              <span className='select-none text-sm'>{t('projectListTitle')}</span>
+              <span className='ml-2 select-none text-sm'>{t('projectListTitle')}</span>
               <Button
                 variant={ButtonVariant.SQUARE}
                 type={ButtonType.PRIMARY}
@@ -150,7 +198,7 @@ const ExpandSidebar: React.FC = () => {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='group justify-start px-1'
+          className='group justify-start px-2'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           // icon={<ProjectBoardIcon />}
@@ -162,7 +210,7 @@ const ExpandSidebar: React.FC = () => {
           </span>
         </Button>
         <Button
-          className='group justify-start px-1'
+          className='group justify-start px-2'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           size='small'
@@ -187,4 +235,4 @@ const ExpandSidebar: React.FC = () => {
   )
 }
 
-export default ExpandSidebar
+export default ExpandedSidebar

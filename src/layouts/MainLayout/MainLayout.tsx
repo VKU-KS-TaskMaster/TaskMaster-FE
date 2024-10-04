@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
 import SpaceContainer from '@containers/SpaceContainer'
-import { Content, Header } from '@components/micro/Auth'
+import { Content, Header } from '@components/micro/Main'
 
 function MainLayout() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false)
