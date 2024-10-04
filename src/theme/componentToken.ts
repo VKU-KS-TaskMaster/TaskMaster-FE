@@ -22,31 +22,21 @@ export const componentToken = (mode: 'dark' | 'light') => {
       colorSplit: colors[mode].BG.DIVIDER
     },
     Menu: {
-      //Light
-      // popupBg: colors[mode].BG.WEAK,
-      // subMenuItemBg: colors[mode].BG.WEAK,
-      // iconMarginInlineEnd: 10,
+      popupBg: colors[mode].BG.WEAK,
+      subMenuItemBg: colors[mode].BG.WEAK,
 
-      // itemBg: colors[mode].BG.WEAK,
-      // itemActiveBg: colors[mode].BG.ACTIVE,
-      // itemColor: colors[mode].TEXT.WEAK,
-      // itemHoverBg: colors[mode].BG.ACTIVE,
-      // itemHoverColor: colors[mode].TEXT.ACTIVE,
-      // itemSelectedBg: colors[mode].BG.DIVIDER,
-      // itemPaddingInline: 10,
-      // itemMarginBlock: 6,
-      // itemMarginInline: 0,
-      // itemHeight: 34,
-
-      //Dark
-      darkPopupBg: colors[mode].BG.WEAK,
-      darkSubMenuItemBg: colors[mode].BG.WEAK,
-
-      darkItemBg: colors[mode].BG.WEAK,
-      darkItemActiveBg: colors[mode].BG.ACTIVE,
-      darkItemColor: colors[mode].TEXT.WEAK,
-      darkItemHoverBg: colors[mode].BG.ACTIVE,
-      darkItemHoverColor: colors[mode].TEXT.ACTIVE
+      itemBg: colors[mode].BG.WEAK,
+      itemActiveBg: colors[mode].BG.BTN_ACTIVE,
+      itemColor: colors[mode].TEXT.WEAK,
+      itemHoverColor: colors[mode].TEXT.ACTIVE,
+      itemSelectedColor: colors[mode].TEXT.ACTIVE,
+      itemHoverBg: colors[mode].BG.BTN_HOVER,
+      itemSelectedBg: colors[mode].BG.BTN_ACTIVE,
+      itemPaddingInline: 0,
+      iconMarginInlineEnd: 0,
+      itemMarginBlock: 6,
+      itemMarginInline: 0,
+      itemHeight: 32
     },
     Modal: {
       //Dark
