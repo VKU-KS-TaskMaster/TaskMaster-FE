@@ -5,12 +5,10 @@ import SpaceContainer from '@containers/SpaceContainer'
 import { Content, Header } from '@components/micro/Main'
 
 function MainLayout() {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false)
-
   return (
     <SpaceContainer>
-      <Header isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
-      <Content isCollapsed={isCollapsed}>
+      <Header />
+      <Content>
         <Outlet />
       </Content>
     </SpaceContainer>
