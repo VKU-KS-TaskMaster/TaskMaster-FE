@@ -1,8 +1,9 @@
+import { ReactNode } from 'react'
+import { Divider } from 'antd'
+
 import colors from '@constants/colors'
 import Sidebar from '../Sidebar'
 import { cn } from '@utils/base'
-import { Divider } from 'antd'
-import { ReactNode } from 'react'
 import { useAppSelector } from '@features/hook'
 
 function Content({ children }: { children: ReactNode }) {

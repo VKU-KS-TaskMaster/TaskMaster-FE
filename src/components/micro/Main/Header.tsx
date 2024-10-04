@@ -180,7 +180,7 @@ function Header() {
   return (
     <div
       className={cn(
-        'grid-col-12 bg-bg-navigationHeader border-border-bottom mx-auto grid grid-flow-col gap-8 border-b-[1px] px-5 py-2',
+        'grid-col-12 mx-auto grid grid-flow-col gap-8 border-b-[1px] border-light-border-bottom bg-light-bg-navigationHeader px-5 py-2 dark:bg-bg-navigationHeader',
         'h-[var(--header-height)]'
       )}
     >
