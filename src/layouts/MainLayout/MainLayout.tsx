@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { Content, Header } from '@components/micro/Main'
 import SpaceContainer from '@containers/SpaceContainer'
+import { Content, Header } from '@components/micro/Auth'
 
 function MainLayout() {
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false)
+
   return (
     <SpaceContainer>
-      <Header />
-      <Content>
+      <Header isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+      <Content isCollapsed={isCollapsed}>
         <Outlet />
       </Content>
     </SpaceContainer>

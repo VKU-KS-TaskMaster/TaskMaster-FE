@@ -1,22 +1,19 @@
+import { useAppDispatch, useAppSelector } from '@features/hook'
+import { setCreateModal } from '@features/slices/base'
+import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { setCreateModal } from '@features/slices/base'
-import { useAppDispatch, useAppSelector } from '@features/hook'
-import { Divider, Dropdown, MenuProps, Tooltip, TooltipProps } from 'antd'
 
-import colors from '@constants/colors'
-import UserAction from './UserAction'
-import CreateModal from '@components/common/CreateModal'
-import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
 import Button, { ButtonType, ButtonVariant } from '@components/base/Button'
-import { cn } from '@utils/base'
-import { TAB_KEYS } from '@components/common/CreateModal'
+import CreateModal, { TAB_KEYS } from '@components/common/CreateModal'
 import {
+  CloseSidebarIcon,
   CreateIcon,
   CreateReminderIcon,
   InviteIcon,
   OpenNotepadIcon,
   OpenQuickActionIcon,
+  OpenSidebarIcon,
   OpenTaskIcon,
   ProjectOverviewIcon,
   SearchIcon,
@@ -25,6 +22,10 @@ import {
   TeamIcon,
   UpgradeIcon
 } from '@components/common/Icon'
+import MenuLabelTranslItem from '@components/common/MenuLabelTranslItem'
+import colors from '@constants/colors'
+import { cn } from '@utils/base'
+import UserAction from './UserAction'
 
 export const HEADER_HEIGHT = '52px'
 
@@ -165,7 +166,10 @@ const MENU_CREATE_ITEMS: MenuProps['items'] = [
   }
 ]
 
-function Header() {
+const Header: React.FC<{
+  isCollapsed: boolean
+  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ isCollapsed, setIsCollapsed }) => {
   const themeMode = useAppSelector((state) => state.theme.mode)
   const dispatch = useAppDispatch()
   const { t } = useTranslation(['cms'], {
@@ -184,7 +188,14 @@ function Header() {
         'h-[var(--header-height)]'
       )}
     >
-      <div className='col-span-4 flex flex-row'>
+      <div className='col-span-4 flex flex-row gap-6'>
+        <Button
+          onClick={() => setIsCollapsed((prev) => !prev)}
+          variant={ButtonVariant.SQUARE}
+          type={ButtonType.PRIMARY}
+          icon={isCollapsed ? <OpenSidebarIcon width={20} height={20} /> : <CloseSidebarIcon width={20} height={20} />}
+          className='ml-[-12px]'
+        />
         <Dropdown
           menu={{
             items: MENU_CREATE_ITEMS,

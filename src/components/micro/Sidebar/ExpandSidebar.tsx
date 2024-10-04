@@ -19,7 +19,7 @@ import colors from '@constants/colors'
 import { useAppSelector } from '@features/hook'
 import type { MenuProps } from 'antd'
 import { Avatar, ConfigProvider, Divider, Dropdown, Input, Menu } from 'antd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const TRANSL_CONFIG = {
@@ -69,12 +69,11 @@ const TOP_ITEMS: MenuProps['items'] = [
 
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
 // Main Component
-const Sidebar: React.FC = () => {
+const ExpandSidebar: React.FC = () => {
   const themeMode = useAppSelector((state) => state.theme.mode)
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
-
   return (
     <div className='flex h-full w-56 flex-col overflow-hidden bg-light-bg-navigationSidebar text-light-text-weak dark:bg-bg-navigationSidebar dark:text-text-weak'>
       <div className='gap-4 border-b border-light-border-bottom p-2 dark:border-border-bottom'>
@@ -188,4 +187,4 @@ const Sidebar: React.FC = () => {
   )
 }
 
-export default Sidebar
+export default ExpandSidebar
