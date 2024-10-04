@@ -41,25 +41,26 @@ const colors = {
       NAVIGATION_HEADER: '#F9F8F8',
       NAVIGATION_SIDEBAR: '#F9F8F8',
       NAVIGATION_CONTENT: '#FFFFFF',
-      BTN_HOVER: '#F5F3F3',
-      BTN_ACTIVE: '#371717',
+      BTN: 'transparent',
+      BTN_HOVER: '#E8E6E6',
+      BTN_ACTIVE: '#E0DDDD',
       INPUT_MODAL: '#F9F8F8',
       SUCCESS: 'rgba(29, 55, 51, 1)',
       MESS: 'rgba(173, 104, 0, 1)',
       WEAK: '#FFFFFF',
       ACTIVE: '#FFFFFF',
       CARD: '#FFFFFF',
-      DIVIDER: '#EDEAE9',
-      ITEM_HOVER: '#371717'
+      DIVIDER: 'rgb(200, 205, 215, 1)',
+      ITEM_HOVER: '#E0DDDD'
     },
     TEXT: {
       NAVIGATION: '#1E1F21',
-      WEAK: '#6D6E6F',
+      WEAK: '#5A5A5A',
       ACTIVE: '#1E1F21',
       DISABLED: '#AFABAC'
     },
     BORDER: {
-      BOTTOM: '#EDEAE9',
+      BOTTOM: 'rgb(200, 205, 215, 1)',
       BTN: '#CFCBCB',
       BTN_HOVER: '#AFABAC'
     },

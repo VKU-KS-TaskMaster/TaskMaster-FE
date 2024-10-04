@@ -11,6 +11,7 @@ export default {
           navigationHeader: 'rgba(46, 46, 48, 1)',
           navigationSidebar: 'rgba(46, 46, 48, 1)',
           navigationContent: 'rgba(37, 38, 40, 1)',
+          btn: 'transparent',
           btnHover: 'rgba(255, 255, 255, 0.1)',
           btnActive: 'rgba(255, 255, 255, 0.2)',
           inputModal: 'rgba(37, 38, 40, 1)',
@@ -49,25 +50,26 @@ export default {
             navigationHeader: '#F9F8F8',
             navigationSidebar: '#F9F8F8',
             navigationContent: '#FFFFFF',
-            btnHover: '#F5F3F3',
-            btnActive: '#371717',
+            btn: '#ffffff',
+            btnHover: '#E8E6E6',
+            btnActive: '#E0DDDD',
             inputModal: '#F9F8F8',
             success: 'rgba(29, 55, 51, 1)',
             mess: 'rgba(173, 104, 0, 1)',
             weak: '#FFFFFF',
             active: '#FFFFFF',
             card: '#FFFFFF',
-            divider: '#EDEAE9',
-            itemHover: '#371717'
+            divider: 'rgb(200, 205, 215, 1)',
+            itemHover: '#E0DDDD'
           },
           text: {
             navigation: '#1E1F21',
-            weak: '#6D6E6F',
+            weak: '#5A5A5A',
             active: '#1E1F21',
             disabled: '#AFABAC'
           },
           border: {
-            bottom: '#EDEAE9',
+            bottom: 'rgb(200, 205, 215, 1)',
             btn: '#CFCBCB',
             btnHover: '#AFABAC'
           },
