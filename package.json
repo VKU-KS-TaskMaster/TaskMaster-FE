@@ -52,6 +52,7 @@
     "eslint-react": "^0.0.4",
     "less": "^4.2.0",
     "less-plugin-clean-css": "^1.6.0",
+    "lodash": "^4.17.21",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",

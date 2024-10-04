@@ -18,7 +18,7 @@ import TopWorkspaceLabel from '@components/micro/Sidebar/TopWorkSpaceLabel'
 import colors from '@constants/colors'
 import type { MenuProps } from 'antd'
 import { Avatar, ConfigProvider, Divider, Dropdown, Input, Menu } from 'antd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const TRANSL_CONFIG = {
@@ -64,14 +64,13 @@ const TOP_ITEMS: MenuProps['items'] = [
 ]
 
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
-// Main Component
-const Sidebar: React.FC = () => {
+
+export default function ExpandSidebar() {
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
-
   return (
-    <div className='text-text-weak flex h-full w-56 flex-col overflow-hidden bg-navigation-headerBg'>
+    <>
       <div className='gap-4 border-b border-borderBottom p-2'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
@@ -88,8 +87,8 @@ const Sidebar: React.FC = () => {
       </div>
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
       <Divider type='horizontal' variant='solid' className='my-2 bg-borderBottom' />
-      <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
-        <div className='text-text-light flex items-center justify-between font-bold'>
+      <div className='flex flex-1 flex-col gap-2 overflow-hidden px-[10px] py-[6px]'>
+        <div className='flex items-center justify-between font-bold text-text-light'>
           {isSearch ? (
             <>
               <Button
@@ -103,8 +102,8 @@ const Sidebar: React.FC = () => {
                 theme={{
                   token: {
                     lineWidth: 0,
-                    colorText: colors.TEXT,
-                    colorTextPlaceholder: colors.TEXT_WEAK
+                    colorText: colors.TEXT.LIGHT,
+                    colorTextPlaceholder: colors.TEXT.WEAK
                   }
                 }}
               >
@@ -117,7 +116,7 @@ const Sidebar: React.FC = () => {
                   onBlur={() => searchValue === '' && setIsSearch(false)}
                   suffix={
                     <Button
-                      icon={<CloseIcon className='text-text-weak text-[12px]' />}
+                      icon={<CloseIcon className='text-[12px] text-text-weak' />}
                       size='small'
                       onClick={() => setSearchValue('')}
                     />
@@ -141,7 +140,7 @@ const Sidebar: React.FC = () => {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='text-text-weak hover:text-text-light justify-start p-0'
+          className='justify-start p-0 text-text-weak hover:text-text-light'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<ProjectBoardIcon />}
@@ -150,7 +149,7 @@ const Sidebar: React.FC = () => {
           <span className='text-sm'>{t('projectListBtn')}</span>
         </Button>
         <Button
-          className='text-text-weak hover:text-text-light justify-start p-0'
+          className='justify-start p-0 text-text-weak hover:text-text-light'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<PlusOutlined />}
@@ -165,8 +164,6 @@ const Sidebar: React.FC = () => {
         <div className='h-[22px] w-px bg-borderBottom' />
         <Button icon={<HelpIcon />}>{t('helpBtn')}</Button>
       </div>
-    </div>
+    </>
   )
 }
-
-export default Sidebar
