@@ -19,7 +19,7 @@ import colors from '@constants/colors'
 import { useAppSelector } from '@features/hook'
 import type { MenuProps } from 'antd'
 import { Avatar, ConfigProvider, Divider, Dropdown, Input, Menu } from 'antd'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const TRANSL_CONFIG = {
@@ -66,15 +66,14 @@ const TOP_ITEMS: MenuProps['items'] = [
 
 const PROJECT_DATA = ['Project 1', 'Project 2', 'Project 3', 'Project 4']
 // Main Component
-const Sidebar: React.FC = () => {
+const ExpandSidebar: React.FC = () => {
   const themeMode = useAppSelector((state) => state.theme.mode)
   const [isSearch, setIsSearch] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const { t } = useTranslation(['cms'], { keyPrefix: 'layout.sidebar' })
-
   return (
-    <div className='bg-bg-navigationSidebar flex h-full w-56 flex-col overflow-hidden text-text-weak'>
-      <div className='border-border-bottom gap-4 border-b p-2'>
+    <div className='flex h-full w-56 flex-col overflow-hidden bg-bg-navigationSidebar text-text-weak'>
+      <div className='gap-4 border-b border-border-bottom p-2'>
         <Dropdown
           menu={{ items: MENU_WORKSPACE }}
           trigger={['click']}
@@ -89,9 +88,9 @@ const Sidebar: React.FC = () => {
         </Dropdown>
       </div>
       <Menu className='bg-transparent p-2' defaultSelectedKeys={['1']} items={TOP_ITEMS} />
-      <Divider type='horizontal' variant='solid' className='bg-border-bottom my-2' />
+      <Divider type='horizontal' variant='solid' className='my-2 bg-border-bottom' />
       <div className='flex flex-1 flex-col gap-2 overflow-hidden py-[6px] pl-[10px] pr-6'>
-        <div className='text-text-active flex items-center justify-between font-bold'>
+        <div className='flex items-center justify-between font-bold text-text-active'>
           {isSearch ? (
             <>
               <Button
@@ -143,7 +142,7 @@ const Sidebar: React.FC = () => {
         <ProjectList data={PROJECT_DATA} />
 
         <Button
-          className='hover:text-text-active justify-start p-0 text-text-weak'
+          className='justify-start p-0 text-text-weak hover:text-text-active'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<ProjectBoardIcon />}
@@ -152,7 +151,7 @@ const Sidebar: React.FC = () => {
           <span className='text-sm'>{t('projectListBtn')}</span>
         </Button>
         <Button
-          className='hover:text-text-active justify-start p-0 text-text-weak'
+          className='justify-start p-0 text-text-weak hover:text-text-active'
           variant={ButtonVariant.SQUARE}
           type={ButtonType.PRIMARY}
           icon={<PlusOutlined />}
@@ -162,13 +161,13 @@ const Sidebar: React.FC = () => {
         </Button>
       </div>
 
-      <div className='border-border-bottom flex items-center justify-between border-t px-2 py-2'>
+      <div className='flex items-center justify-between border-t border-border-bottom px-2 py-2'>
         <Button icon={<AssignMemberIcon />}>{t('inviteBtn')}</Button>
-        <div className='bg-border-bottom h-[22px] w-px' />
+        <div className='h-[22px] w-px bg-border-bottom' />
         <Button icon={<HelpIcon />}>{t('helpBtn')}</Button>
       </div>
     </div>
   )
 }
 
-export default Sidebar
+export default ExpandSidebar
