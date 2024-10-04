@@ -43,7 +43,6 @@ const TAB_ITEMS: TabsProps['items'] = [
 ]
 
 function CreateModal() {
-  const [modal, contextHolder] = Modal.useModal()
   const activeKey = useAppSelector((state) => state.base.createModal.key)
   const show = useAppSelector((state) => state.base.createModal.show)
   const dispatch = useAppDispatch()
@@ -81,7 +80,9 @@ function CreateModal() {
             padding: '0 1.5rem'
           }}
           more={{
-            icon: <EllipsisOutlined className='hover:text-text-active text-text-weak' />
+            icon: (
+              <EllipsisOutlined className='text-light-icon-weak hover:text-light-icon-active dark:text-icon-weak dark:hover:text-icon-active' />
+            )
           }}
         />
       }

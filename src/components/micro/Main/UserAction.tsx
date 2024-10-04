@@ -18,11 +18,14 @@ const TRANSL_CONFIG = {
   prefix: 'layout.header.userAction'
 }
 
+const MENU_ITEMS_CLASS_NAME =
+  'group hover:bg-light-bg-btnHover dark:hover:bg-bg-btnHover active:bg-light-bg-btnActive dark:active:bg-bg-btnActive'
+
 const MENU_ITEMS: MenuProps['items'] = [
   {
     key: 'muteNotiItem',
     type: 'submenu',
-    className: 'group',
+    className: MENU_ITEMS_CLASS_NAME,
     label: (
       <MenuLabelTranslItem
         icon={<MuteNotificationIcon className='mr-2' />}
@@ -35,27 +38,27 @@ const MENU_ITEMS: MenuProps['items'] = [
     children: [
       {
         key: 'muteNotiItemLev1',
-        className: 'group',
+        className: MENU_ITEMS_CLASS_NAME,
         label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='muteNotiLv1' />
       },
       {
         key: 'muteNotiItemLev2',
-        className: 'group',
+        className: MENU_ITEMS_CLASS_NAME,
         label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='muteNotiLv2' />
       },
       {
         key: 'muteNotiItemLev3',
-        className: 'group',
+        className: MENU_ITEMS_CLASS_NAME,
         label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='muteNotiLv3' />
       },
       {
         key: 'muteNotiItemLev4',
-        className: 'group',
+        className: MENU_ITEMS_CLASS_NAME,
         label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='muteNotiLv4' />
       },
       {
         key: 'muteNotiItemLev5',
-        className: 'group',
+        className: MENU_ITEMS_CLASS_NAME,
         label: <MenuLabelTranslItem ns={TRANSL_CONFIG.ns} prefix={TRANSL_CONFIG.prefix} i18nKey='muteNotiLv5' />
       }
     ]
@@ -63,7 +66,7 @@ const MENU_ITEMS: MenuProps['items'] = [
   {
     key: 'inviteItem',
     type: 'item',
-    className: 'group',
+    className: MENU_ITEMS_CLASS_NAME,
     label: (
       <MenuLabelTranslItem
         icon={<InviteIcon className='mr-2' />}
@@ -79,7 +82,7 @@ const MENU_ITEMS: MenuProps['items'] = [
   {
     key: 'profileItem',
     type: 'item',
-    className: 'group',
+    className: MENU_ITEMS_CLASS_NAME,
     label: (
       <MenuLabelTranslItem
         icon={<UserIcon className='mr-2' />}
@@ -92,7 +95,7 @@ const MENU_ITEMS: MenuProps['items'] = [
   {
     key: 'settingItem',
     type: 'item',
-    className: 'group',
+    className: MENU_ITEMS_CLASS_NAME,
     label: (
       <MenuLabelTranslItem
         icon={<SettingIcon className='mr-2' />}
@@ -105,7 +108,7 @@ const MENU_ITEMS: MenuProps['items'] = [
   {
     key: 'signOutItem',
     type: 'item',
-    className: 'group',
+    className: MENU_ITEMS_CLASS_NAME,
     label: (
       <MenuLabelTranslItem
         icon={<SignOutIcon className='mr-2' />}

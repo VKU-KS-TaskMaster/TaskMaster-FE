@@ -10,7 +10,7 @@ export type MenuLabelTranslItemProps = {
 }
 
 function MenuLabelTranslItem({ icon, className, ns, prefix, i18nKey }: MenuLabelTranslItemProps) {
-  const DEFAULT_CLASS_NAME = `group-hover:text-text-active`
+  const DEFAULT_CLASS_NAME = `group-hover:text-light-text-active dark:group-hover:text-text-active`
   className = `${DEFAULT_CLASS_NAME} ${className?.trim()}`
 
   return (

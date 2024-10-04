@@ -1,4 +1,3 @@
-import { useTheme } from '@hooks/useTheme'
 import { cn } from '@utils/base'
 import type { ButtonProps } from 'antd'
 import { Button as BaseButton } from 'antd'
@@ -25,22 +24,22 @@ type DefineButtonColorType = Partial<Record<ButtonCombination, string>>
 
 export const DEFINE_BUTTON_CLASS_NAME: DefineButtonColorType = {
   [`${ButtonType.DEFAULT}_${ButtonVariant.GHOST}`]:
-    'group border-border-btn text-text-weak hover:bg-bg-btnHover hover:text-text-active active:bg-bg-btnActive active:border-border-btnHover',
+    'group border-light-border-btn dark:border-border-btn text-light-text-weak dark:text-text-weak bg-light-bg-btn dark:bg-bg-btn hover:bg-light-bg-btnHover dark:hover:bg-bg-btnHover hover:text-light-text-active dark:hover:text-text-active active:bg-light-bg-btnActive dark:active:bg-bg-btnActive active:border-light-border-btnHover dark:active:border-border-btnHover',
   [`${ButtonType.PRIMARY}_${ButtonVariant.GHOST}`]:
-    'border-border-btn text-text-active hover:bg-bg-btnHover active:bg-bg-btnActive active:border-border-btnHover',
+    'border-light-border-btn dark:border-border-btn text-light-text-active dark:text-text-active bg-light-bg-btn dark:bg-bg-btn hover:bg-light-bg-btnHover dark:hover:bg-bg-btnHover active:bg-light-bg-btnActive dark:active:bg-bg-btnActive active:border-light-border-btnHover dark:active:border-border-btnHover',
   [`${ButtonType.DEFAULT}_${ButtonVariant.SQUARE}`]:
-    'group justify-center bg-transparent border-transparent hover:text-text-active text-text-weak shadow-none hover:bg-bg-btnHover active:bg-bg-btnActive active:border-border-btnHover',
+    'group justify-center bg-transparent dark:bg-transparent border-transparent dark:border-transparent hover:text-light-text-active dark:hover:text-text-active text-light-text-weak dark:text-text-weak shadow-none hover:bg-light-bg-btnHover dark:hover:bg-bg-btnHover active:bg-light-bg-btnActive dark:active:bg-bg-btnActive active:border-light-border-btnHover dark:active:border-border-btnHover',
   [`${ButtonType.PRIMARY}_${ButtonVariant.SQUARE}`]:
-    'justify-center bg-transparent border-transparent shadow-none hover:bg-bg-btnHover active:bg-bg-btnActive active:border-border-btnHover'
+    'justify-center bg-transparent dark:bg-transparent border-transparent dark:border-transparent shadow-none hover:bg-light-bg-btnHover dark:hover:bg-bg-btnHover active:bg-light-bg-btnActive dark:active:bg-bg-btnActive active:border-light-border-btnHover dark:active:border-border-btnHover'
 }
 
 export const DEFINE_BUTTON_ICON_CLASS_NAME: DefineButtonColorType = {
   [`${ButtonType.DEFAULT}_${ButtonVariant.GHOST}`]:
-    'text-icon-weak transition-colors duration-200 group-hover:text-icon-active group-active:text-icon-active',
+    'text-light-icon-weak dark:text-icon-weak transition-colors duration-200 group-hover:text-light-icon-active dark:group-hover:text-icon-active group-active:text-light-icon-active dark:group-active:text-icon-active',
   [`${ButtonType.PRIMARY}_${ButtonVariant.GHOST}`]: '',
   [`${ButtonType.DEFAULT}_${ButtonVariant.SQUARE}`]:
-    'text-icon-weak transition-colors duration-200 group-hover:text-icon-active group-active:text-icon-active',
-  [`${ButtonType.PRIMARY}_${ButtonVariant.SQUARE}`]: 'text-icon-active'
+    'text-light-icon-weak dark:text-icon-weak transition-colors duration-200 group-hover:text-light-icon-active dark:group-hover:text-icon-active group-active:text-light-icon-active dark:group-active:text-icon-active',
+  [`${ButtonType.PRIMARY}_${ButtonVariant.SQUARE}`]: 'text-light-icon-active dark:text-icon-active'
 }
 
 interface ButtonCustomProps extends Omit<ButtonProps, 'variant'> {
